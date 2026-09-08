@@ -2,8 +2,8 @@ import { Link } from '@tanstack/react-router'
 
 export default function Header() {
   return (
-    <header className="sticky inset-x-0 top-0 z-[100] bg-background/80 backdrop-blur-[14px] border-b-2 border-border shadow-lg">
-      <nav className=" py-6 px-8 max-[680px]:px-5 flex justify-between container">
+    <header className="sticky inset-x-0 top-0 z-[100] border-b border-border bg-background/90 backdrop-blur-[14px]">
+      <nav className="container flex items-center justify-between px-5 py-4 sm:px-8">
         <Link
           to="/"
           className="logo flex items-center gap-[9px] font-['Poppins'] font-bold text-[21px] tracking-[-0.02em]"
@@ -16,7 +16,7 @@ export default function Header() {
           Oleq
         </Link>
 
-        <div className="nav-links hidden min-[681px]:flex items-center gap-[34px]">
+        <div className="nav-links hidden items-center gap-7 lg:flex">
           <Link
             to="/"
             className="nav-link"
@@ -32,6 +32,13 @@ export default function Header() {
             Services
           </Link>
           <Link
+            to="/projects"
+            className="nav-link"
+            activeProps={{ className: `nav-link is-active` }}
+          >
+            Work
+          </Link>
+          <Link
             to="/about"
             className="nav-link"
             activeProps={{ className: `nav-link is-active` }}
@@ -39,13 +46,26 @@ export default function Header() {
             About Us
           </Link>
           <Link
-            to="/contact"
+            to="/team"
             className="nav-link"
             activeProps={{ className: `nav-link is-active` }}
           >
-            Contact Us
+            Team
+          </Link>
+          <Link
+            to="/contact"
+            className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground no-underline transition hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground"
+            activeProps={{ className: `nav-link is-active` }}
+          >
+            Request a quote
           </Link>
         </div>
+        <Link
+          to="/contact"
+          className="rounded-full bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground no-underline lg:hidden"
+        >
+          Get a quote
+        </Link>
       </nav>
     </header>
   )

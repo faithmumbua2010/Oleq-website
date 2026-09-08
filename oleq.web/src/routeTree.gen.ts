@@ -12,7 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as AccountDeletionRouteImport } from './routes/account/deletion'
 import { Route as DemoPosthogRouteImport } from './routes/demo/posthog'
 import { Route as DemoFormAddressRouteImport } from './routes/demo/form.address'
 import { Route as DemoFormSimpleRouteImport } from './routes/demo/form.simple'
@@ -32,9 +36,29 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountDeletionRoute = AccountDeletionRouteImport.update({
+  id: '/account/deletion',
+  path: '/account/deletion',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoPosthogRoute = DemoPosthogRouteImport.update({
@@ -57,7 +81,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/team': typeof TeamRoute
+  '/account/deletion': typeof AccountDeletionRoute
   '/demo/posthog': typeof DemoPosthogRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -66,7 +94,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/team': typeof TeamRoute
+  '/account/deletion': typeof AccountDeletionRoute
   '/demo/posthog': typeof DemoPosthogRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -76,7 +108,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/team': typeof TeamRoute
+  '/account/deletion': typeof AccountDeletionRoute
   '/demo/posthog': typeof DemoPosthogRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
@@ -87,7 +123,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/privacy'
+    | '/projects'
     | '/services'
+    | '/team'
+    | '/account/deletion'
     | '/demo/posthog'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -96,7 +136,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/privacy'
+    | '/projects'
     | '/services'
+    | '/team'
+    | '/account/deletion'
     | '/demo/posthog'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -105,7 +149,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/privacy'
+    | '/projects'
     | '/services'
+    | '/team'
+    | '/account/deletion'
     | '/demo/posthog'
     | '/demo/form/address'
     | '/demo/form/simple'
@@ -115,7 +163,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
+  TeamRoute: typeof TeamRoute
+  AccountDeletionRoute: typeof AccountDeletionRoute
   DemoPosthogRoute: typeof DemoPosthogRoute
   DemoFormAddressRoute: typeof DemoFormAddressRoute
   DemoFormSimpleRoute: typeof DemoFormSimpleRoute
@@ -144,11 +196,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account/deletion': {
+      id: '/account/deletion'
+      path: '/account/deletion'
+      fullPath: '/account/deletion'
+      preLoaderRoute: typeof AccountDeletionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/posthog': {
@@ -179,7 +259,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
+  TeamRoute: TeamRoute,
+  AccountDeletionRoute: AccountDeletionRoute,
   DemoPosthogRoute: DemoPosthogRoute,
   DemoFormAddressRoute: DemoFormAddressRoute,
   DemoFormSimpleRoute: DemoFormSimpleRoute,

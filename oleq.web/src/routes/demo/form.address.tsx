@@ -22,10 +22,8 @@ function AddressForm() {
     },
     validators: {
       onBlur: ({ value }) => {
-        const errors = {
+        const errors: { fields: Record<string, string> } = {
           fields: {},
-        } as {
-          fields: Record<string, string>
         }
         if (value.fullName.trim().length === 0) {
           errors.fields.fullName = 'Full name is required'
