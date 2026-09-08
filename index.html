@@ -15,1332 +15,44 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
-
-    <style>
-      :root {
-        --ink: #0c1527;
-        --ink-2: #0d1220;
-        --surface: #121a2e;
-        --surface-2: #161f36;
-        --line: #232f4b;
-        --line-soft: #1a2338;
-        --text: #f3f5fa;
-        --text-dim: #9aa6c4;
-        --text-faint: #5f6c8f;
-        --gold: #7c3aed;
-        --gold-soft: #a78bfa;
-        --teal: #2563eb;
-        --teal-dim: #1e3a8a;
-        --danger: #e7663b;
-        --header-bg: rgba(18, 26, 46, 0.78);
-        --radius: 14px;
-        --maxw: 1220px;
-        --ease: cubic-bezier(0.16, 0.84, 0.44, 1);
-      }
-      [data-theme="light"] {
-        --ink: #f7f9fc;
-        --ink-2: #eef3f8;
-        --surface: #ffffff;
-        --surface-2: #e8eef5;
-        --line: #d4deea;
-        --line-soft: #e3eaf2;
-        --text: #102038;
-        --text-dim: #52647d;
-        --text-faint: #73839a;
-        --gold: #6d28d9;
-        --gold-soft: #8b5cf6;
-        --teal: #1d4ed8;
-        --teal-dim: #bfdbfe;
-        --header-bg: rgba(255, 255, 255, 0.82);
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        * {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-      body {
-        margin: 0;
-        background: var(--ink);
-        color: var(--text);
-        font-family: "Poppins", sans-serif;
-        font-size: 16px;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        line-height: 1.08;
-        margin: 0;
-        letter-spacing: -0.01em;
-      }
-      p {
-        margin: 0;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      .mono {
-        font-family: "IBM Plex Mono", monospace;
-      }
-      ::selection {
-        background: var(--gold);
-        color: #0a0e18;
-      }
-
-      .wrap {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        padding: 0 32px;
-      }
-      section {
-        position: relative;
-      }
-
-    
-
-      /* ---------- eyebrow / labels ---------- */
-      .eyebrow {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 12.5px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--gold);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 18px;
-      }
-      .eyebrow::before {
-        content: "";
-        width: 18px;
-        height: 1px;
-        background: var(--gold);
-        display: inline-block;
-      }
-
-      /* ---------- buttons ---------- */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 14px 26px;
-        border-radius: 999px;
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-size: 15px;
-        cursor: pointer;
-        border: 1px solid transparent;
-        transition:
-          transform 0.35s var(--ease),
-          background 0.35s var(--ease),
-          border-color 0.35s var(--ease),
-          color 0.35s var(--ease);
-        white-space: nowrap;
-      }
-      .btn-primary {
-        background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
-        color: #fff;
-      }
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        background: var(--gold-soft);
-      }
-      .btn-ghost {
-        border-color: var(--line);
-        color: var(--text);
-      }
-      .btn-ghost:hover {
-        border-color: var(--text-dim);
-        transform: translateY(-2px);
-      }
-      .btn svg {
-        width: 15px;
-        height: 15px;
-        flex-shrink: 0;
-      }
-
-      /* ---------- nav ---------- */
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        background: var(--header-bg);
-        backdrop-filter: blur(14px);
-        border-bottom: 2px solid var(--line-soft);
-        box-shadow: 0 8px 24px rgba(4, 12, 28, 0.12);
-      }
-      nav {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        min-height: 82px;
-        padding: 24px 32px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .logo {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-size: 21px;
-        letter-spacing: -0.02em;
-        display: flex;
-        align-items: center;
-        gap: 9px;
-      }
-
-      .oleq-logo {
-        max-width: 40px;
-      }
-      .logo .dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--gold);
-        box-shadow: 0 0 10px var(--gold);
-      }
-      .nav-links {
-        display: flex;
-        gap: 34px;
-        align-items: center;
-      }
-      .nav-links a {
-        font-size: 14.5px;
-        color: var(--text-dim);
-        font-weight: 500;
-        transition: color 0.25s;
-        position: relative;
-      }
-      .nav-links a:hover {
-        color: var(--text);
-      }
-      .nav-cta {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-      }
-      .nav-cta .btn {
-        padding: 11px 22px;
-        font-size: 14px;
-      }
-      .theme-toggle {
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--line);
-        border-radius: 50%;
-        background: transparent;
-        color: var(--text-dim);
-        cursor: pointer;
-        transition:
-          color 0.25s,
-          border-color 0.25s,
-          transform 0.25s;
-      }
-      .theme-toggle:hover {
-        color: var(--text);
-        border-color: var(--text-dim);
-        transform: translateY(-2px);
-      }
-      .theme-toggle svg {
-        width: 17px;
-        height: 17px;
-      }
-      .theme-toggle .sun-icon {
-        display: none;
-      }
-      [data-theme="light"] .theme-toggle .moon-icon {
-        display: none;
-      }
-      [data-theme="light"] .theme-toggle .sun-icon {
-        display: block;
-      }
-      .menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--text);
-        cursor: pointer;
-        padding: 6px;
-      }
-      .menu-toggle svg {
-        width: 24px;
-        height: 24px;
-      }
-      @media (max-width: 680px) {
-        .theme-toggle {
-          width: 36px;
-          height: 36px;
-        }
-        .nav-cta {
-          gap: 10px;
-        }
-        .nav-links.mobile-open {
-          display: flex;
-          position: fixed;
-          top: 64px;
-          left: 0;
-          right: 0;
-          background: var(--ink-2);
-          flex-direction: column;
-          padding: 24px 32px;
-          gap: 20px;
-          border-bottom: 1px solid var(--line);
-        }
-      }
-
-      /* ---------- hero ---------- */
-      .hero {
-        padding: 168px 0 100px;
-        overflow: hidden;
-        position: relative;
-      }
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            700px 500px at 82% 10%,
-            rgba(124, 58, 237, 0.15),
-            transparent 60%
-          ),
-          radial-gradient(
-            600px 500px at 10% 90%,
-            rgba(37, 99, 235, 0.1),
-            transparent 60%
-          );
-        pointer-events: none;
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 64px;
-        align-items: center;
-        position: relative;
-      }
-      .hero h1 {
-        font-size: clamp(38px, 4.6vw, 62px);
-        margin-bottom: 24px;
-      }
-      .hero h1 .accent {
-        color: var(--gold);
-      }
-      .hero-sub {
-        font-size: 18px;
-        color: var(--text-dim);
-        max-width: 480px;
-        margin-bottom: 38px;
-      }
-      .hero-ctas {
-        display: flex;
-        gap: 16px;
-        margin-bottom: 56px;
-        flex-wrap: wrap;
-      }
-      .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(4, auto);
-        gap: 36px;
-        border-top: 1px solid var(--line-soft);
-        padding-top: 26px;
-      }
-      .hero-stat b {
-        display: block;
-        font-family: "Poppins", sans-serif;
-        font-size: 24px;
-        color: var(--text);
-        font-weight: 600;
-      }
-      .hero-stat span {
-        font-size: 12.5px;
-        color: var(--text-faint);
-        font-family: "IBM Plex Mono", monospace;
-      }
-
-      .map-wrap {
-        position: relative;
-      }
-      .map-card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 22px;
-        box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.6);
-      }
-      .map-card-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 6px;
-        padding: 0 4px;
-      }
-      .map-card-head .mono {
-        font-size: 11.5px;
-        color: var(--text-faint);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
-      .live-tag {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11.5px;
-        color: var(--teal);
-        font-family: "IBM Plex Mono", monospace;
-      }
-      .live-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--teal);
-        animation: pulse-dot 1.8s infinite;
-      }
-      @keyframes pulse-dot {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.25;
-        }
-      }
-      #network-svg {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-      .node-land {
-        fill: var(--line-soft);
-      }
-      .node-hub {
-        fill: var(--gold);
-        filter: drop-shadow(0 0 6px rgba(124, 58, 237, 0.7));
-      }
-      .node-hq {
-        fill: var(--teal);
-        filter: drop-shadow(0 0 9px rgba(37, 99, 235, 0.9));
-      }
-      .net-line {
-        fill: none;
-        stroke: var(--teal);
-        stroke-width: 1.1;
-        opacity: 0.55;
-        stroke-dasharray: 4 4;
-        animation: dash-flow 18s linear infinite;
-      }
-      @keyframes dash-flow {
-        to {
-          stroke-dashoffset: -400;
-        }
-      }
-      .node-label {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 8.5px;
-        fill: var(--text-dim);
-      }
-
-      /* ---------- section shell ---------- */
-      .section {
-        padding: 120px 0;
-      }
-      .section-alt {
-        background: var(--ink-2);
-        border-top: 1px solid var(--line-soft);
-        border-bottom: 1px solid var(--line-soft);
-      }
-      .section-head {
-        max-width: 680px;
-        margin-bottom: 64px;
-      }
-      .section-head h2 {
-        font-size: clamp(28px, 3.2vw, 42px);
-        margin-bottom: 18px;
-      }
-      .section-head p {
-        font-size: 17px;
-        color: var(--text-dim);
-      }
-
-      /* reveal */
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition:
-          opacity 0.8s var(--ease),
-          transform 0.8s var(--ease);
-      }
-      .reveal.in {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* ---------- who we are ---------- */
-      .who-grid {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 70px;
-        align-items: start;
-      }
-      .capability-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .chip {
-        padding: 9px 16px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        font-size: 13.5px;
-        color: var(--text-dim);
-        font-family: "IBM Plex Mono", monospace;
-      }
-      .pipeline {
-        margin-top: 44px;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-      .pipeline-step {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding: 15px 0;
-        border-bottom: 1px dashed var(--line);
-      }
-      .pipeline-step:last-child {
-        border-bottom: none;
-      }
-      .pipeline-step .idx {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 12px;
-        color: var(--gold);
-        width: 26px;
-        flex-shrink: 0;
-      }
-      .pipeline-step .label {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-size: 15.5px;
-      }
-
-      /* ---------- industries ---------- */
-      .industry-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-      }
-      .industry-card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 34px;
-        transition:
-          border-color 0.35s,
-          transform 0.35s;
-        position: relative;
-        overflow: hidden;
-      }
-      .industry-card:hover {
-        border-color: var(--gold);
-        transform: translateY(-4px);
-      }
-      .industry-card .tag {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 11.5px;
-        color: var(--text-faint);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 14px;
-        display: block;
-      }
-      .industry-card h3 {
-        font-size: 23px;
-        margin-bottom: 10px;
-      }
-      .industry-card p {
-        color: var(--text-dim);
-        font-size: 15px;
-        margin-bottom: 22px;
-      }
-      .industry-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 7px;
-        margin-bottom: 26px;
-      }
-      .industry-tags span {
-        font-size: 12px;
-        padding: 5px 10px;
-        border-radius: 6px;
-        background: var(--surface-2);
-        color: var(--text-dim);
-      }
-      .industry-metric {
-        border-top: 1px solid var(--line);
-        padding-top: 16px;
-        display: flex;
-        align-items: baseline;
-        gap: 8px;
-      }
-      .industry-metric b {
-        font-family: "Poppins", sans-serif;
-        font-size: 26px;
-        color: var(--gold);
-      }
-      .industry-metric span {
-        font-size: 13px;
-        color: var(--text-faint);
-      }
-
-      /* ---------- payment gateway ---------- */
-      .gateway {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-      }
-      .gateway-list {
-        list-style: none;
-        margin: 30px 0 0;
-        padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px 24px;
-      }
-      .gateway-list li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14.5px;
-        color: var(--text-dim);
-      }
-      .gateway-list li::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        background: var(--teal);
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-      .gateway-country-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 34px;
-        padding: 12px 20px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-      }
-      .gateway-country-badge b {
-        font-family: "Poppins", sans-serif;
-        color: var(--gold);
-        font-size: 18px;
-      }
-      .gateway-country-badge span {
-        font-size: 13px;
-        color: var(--text-dim);
-      }
-
-      /* ---------- platforms ---------- */
-      .platform-strip {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        overflow: hidden;
-      }
-      .platform-cell {
-        background: var(--surface);
-        padding: 30px 26px;
-        min-height: 190px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: background 0.3s;
-      }
-      .platform-cell:hover {
-        background: var(--surface-2);
-      }
-      .platform-cell .pname {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        font-size: 18px;
-        margin-bottom: 6px;
-      }
-      .platform-cell .pdesc {
-        font-size: 13.5px;
-        color: var(--text-dim);
-        line-height: 1.55;
-      }
-      .platform-cell .ptag {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 10.5px;
-        color: var(--teal);
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-
-      /* ---------- AI ---------- */
-      .ai-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-      .ai-card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 28px;
-        background: linear-gradient(
-          180deg,
-          rgba(124, 58, 237, 0.06),
-          transparent 40%
-        );
-      }
-      .ai-card .n {
-        width: 38px;
-        height: 38px;
-        border-radius: 10px;
-        background: var(--surface-2);
-        border: 1px solid var(--line);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        color: var(--gold);
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 13px;
-      }
-      .ai-card h4 {
-        font-size: 17px;
-        margin-bottom: 10px;
-      }
-      .ai-card p {
-        font-size: 14px;
-        color: var(--text-dim);
-      }
-
-      /* ---------- tech ---------- */
-      .tech-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        border-top: 1px solid var(--line);
-        border-left: 1px solid var(--line);
-      }
-      .tech-cell {
-        border-right: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        padding: 26px 28px;
-      }
-      .tech-cell .mono {
-        font-size: 11px;
-        color: var(--text-faint);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        display: block;
-        margin-bottom: 10px;
-      }
-      .tech-cell p {
-        font-size: 14.5px;
-        color: var(--text-dim);
-      }
-
-      /* ---------- why ---------- */
-      .why-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
-      }
-      .why-card {
-        padding: 0;
-      }
-      .why-card .num {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 13px;
-        color: var(--text-faint);
-        margin-bottom: 16px;
-        display: block;
-      }
-      .why-card h3 {
-        font-size: 19px;
-        margin-bottom: 10px;
-      }
-      .why-card p {
-        font-size: 14.5px;
-        color: var(--text-dim);
-      }
-
-      /* ---------- impact / counters ---------- */
-      .impact {
-        background: var(--ink-2);
-        border-top: 1px solid var(--line-soft);
-        border-bottom: 1px solid var(--line-soft);
-        padding: 100px 0;
-      }
-      .impact-grid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 2px;
-        background: var(--line);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        overflow: hidden;
-      }
-      .impact-cell {
-        background: var(--ink-2);
-        padding: 34px 18px;
-        text-align: center;
-      }
-      .impact-cell .counter {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-size: clamp(26px, 3vw, 36px);
-        color: var(--text);
-        display: block;
-        margin-bottom: 8px;
-      }
-      .impact-cell .counter .accent-suffix {
-        color: var(--gold);
-      }
-      .impact-cell .l {
-        font-size: 12.5px;
-        color: var(--text-faint);
-        font-family: "IBM Plex Mono", monospace;
-      }
-
-      /* ---------- team ---------- */
-      .team-wrap {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
-      }
-      .team-disciplines {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px 24px;
-        margin-top: 30px;
-      }
-      .team-disciplines div {
-        font-size: 14px;
-        color: var(--text-dim);
-        padding: 10px 0;
-        border-bottom: 1px solid var(--line-soft);
-      }
-      .lead-card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 32px;
-        background: var(--surface);
-      }
-      .lead-card .initials {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        color: #fff;
-        font-size: 19px;
-        margin-bottom: 20px;
-      }
-      .lead-card h4 {
-        font-size: 19px;
-        margin-bottom: 4px;
-      }
-      .lead-card .role {
-        font-size: 13px;
-        color: var(--gold);
-        font-family: "IBM Plex Mono", monospace;
-        margin-bottom: 16px;
-        display: block;
-      }
-      .lead-card p {
-        font-size: 14.5px;
-        color: var(--text-dim);
-      }
-
-      /* ---------- vision ---------- */
-      .vision {
-        text-align: center;
-        padding: 130px 0;
-        background: radial-gradient(
-          900px 400px at 50% 0%,
-          rgba(124, 58, 237, 0.15),
-          transparent 60%
-        );
-      }
-      .vision h2 {
-        font-size: clamp(30px, 4vw, 48px);
-        max-width: 800px;
-        margin: 0 auto 26px;
-      }
-      .vision-mission {
-        max-width: 640px;
-        margin: 36px auto 0;
-        padding: 26px 34px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        font-family: "Poppins", sans-serif;
-        font-size: 18px;
-        color: var(--text-dim);
-        font-weight: 500;
-      }
-
-      /* ---------- FAQ ---------- */
-      .faq {
-        max-width: 820px;
-        margin: 0 auto;
-      }
-      .faq-item {
-        border-bottom: 1px solid var(--line);
-        padding: 22px 0;
-      }
-      .faq-q {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        gap: 20px;
-      }
-      .faq-q h4 {
-        font-size: 16.5px;
-        font-weight: 500;
-        font-family: "Inter", sans-serif;
-      }
-      .faq-q .plus {
-        width: 22px;
-        height: 22px;
-        flex-shrink: 0;
-        position: relative;
-      }
-      .faq-q .plus::before,
-      .faq-q .plus::after {
-        content: "";
-        position: absolute;
-        background: var(--text-dim);
-        border-radius: 2px;
-        transition:
-          transform 0.3s var(--ease),
-          opacity 0.3s;
-      }
-      .faq-q .plus::before {
-        width: 14px;
-        height: 2px;
-        top: 10px;
-        left: 4px;
-      }
-      .faq-q .plus::after {
-        width: 2px;
-        height: 14px;
-        top: 4px;
-        left: 10px;
-      }
-      .faq-item.open .plus::after {
-        transform: rotate(90deg);
-        opacity: 0;
-      }
-      .faq-a {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s var(--ease);
-      }
-      .faq-a p {
-        padding-top: 14px;
-        font-size: 14.5px;
-        color: var(--text-dim);
-        max-width: 680px;
-      }
-
-      /* ---------- CTA / contact ---------- */
-      .cta-section {
-        padding: 110px 0;
-        text-align: center;
-        border-top: 1px solid var(--line-soft);
-      }
-      .cta-section .eyebrow {
-        justify-content: center;
-      }
-      .cta-section h2 {
-        font-size: clamp(30px, 4.4vw, 52px);
-        max-width: 760px;
-        margin: 0 auto 40px;
-      }
-      .cta-btns {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 60px;
-      }
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        max-width: 820px;
-        margin: 0 auto;
-        background: var(--line);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        overflow: hidden;
-      }
-      .contact-cell {
-        background: var(--ink);
-        padding: 26px 20px;
-      }
-      .contact-cell .mono {
-        font-size: 11px;
-        color: var(--text-faint);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        display: block;
-        margin-bottom: 10px;
-      }
-      .contact-cell a,
-      .contact-cell span {
-        font-family: "Poppins", sans-serif;
-        font-size: 15.5px;
-        font-weight: 600;
-      }
-      .contact-cell a:hover {
-        color: var(--gold);
-      }
-
-      /* ---------- footer ---------- */
-      footer {
-        border-top: 1px solid var(--line-soft);
-        padding: 60px 0 34px;
-      }
-      .footer-top {
-        display: grid;
-        grid-template-columns: 1.2fr repeat(4, 0.85fr);
-        gap: 36px;
-        margin-bottom: 56px;
-      }
-      .footer-brand .logo {
-        margin-bottom: 16px;
-      }
-      .footer-brand p {
-        font-size: 14px;
-        color: var(--text-dim);
-        max-width: 280px;
-      }
-      .footer-col h5 {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 11.5px;
-        color: var(--text-faint);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 18px;
-      }
-      .footer-col a {
-        display: block;
-        font-size: 14px;
-        color: var(--text-dim);
-        margin-bottom: 12px;
-        transition: color 0.2s;
-      }
-      .footer-col a:hover {
-        color: var(--text);
-      }
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 26px;
-        border-top: 1px solid var(--line-soft);
-        font-size: 13px;
-        color: var(--text-faint);
-        flex-wrap: wrap;
-        gap: 14px;
-      }
-
-      /* ---------- responsive ---------- */
-      @media (max-width: 960px) {
-        .hero-grid {
-          grid-template-columns: 1fr;
-          gap: 56px;
-        }
-        .who-grid,
-        .gateway,
-        .team-wrap {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .industry-grid {
-          grid-template-columns: 1fr;
-        }
-        .platform-strip {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .ai-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .tech-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .why-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .impact-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .contact-grid {
-          grid-template-columns: 1fr;
-        }
-        .footer-top {
-          grid-template-columns: 1fr 1fr;
-          gap: 36px;
-        }
-      }
-      @media (max-width: 680px) {
-        .wrap {
-          padding: 0 20px;
-        }
-        nav {
-          min-height: 70px;
-          padding: 18px 20px;
-        }
-        .nav-links,
-        .nav-cta .btn-ghost {
-          display: none;
-        }
-        .menu-toggle {
-          display: block;
-        }
-        .hero {
-          padding: 130px 0 70px;
-        }
-        .hero-stats {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
-        }
-        .section {
-          padding: 80px 0;
-        }
-        .platform-strip,
-        .ai-grid,
-        .tech-grid,
-        .why-grid {
-          grid-template-columns: 1fr;
-        }
-        .impact-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .footer-top {
-          grid-template-columns: 1fr;
-        }
-        .gateway-list {
-          grid-template-columns: 1fr;
-        }
-      }
-
-
-      /* ---------- inner page hero ---------- */
-      .page-hero {
-        padding: 168px 0 80px;
-        position: relative;
-        overflow: hidden;
-      }
-      .page-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          800px 400px at 50% 0%,
-          rgba(124, 58, 237, 0.15),
-          transparent 60%
-        );
-        pointer-events: none;
-      }
-      .page-hero .wrap {
-        position: relative;
-        max-width: 760px;
-      }
-      .page-hero h1 {
-        font-size: clamp(34px, 4.4vw, 52px);
-        margin-bottom: 18px;
-      }
-      .page-hero h1 .accent {
-        color: var(--gold);
-      }
-      .page-hero p {
-        font-size: 18px;
-        color: var(--text-dim);
-        max-width: 620px;
-      }
-
-      /* ---------- active nav state ---------- */
-      .nav-links a.active {
-        color: var(--text);
-      }
-      .nav-links a.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -22px;
-        height: 2px;
-        background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
-      }
-      .btn-ghost.active {
-        border-color: var(--gold);
-        color: var(--gold);
-      }
-
-      /* ---------- contact form ---------- */
-      .contact-layout {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 60px;
-        align-items: start;
-      }
-      .contact-form {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 40px;
-        display: grid;
-        gap: 20px;
-      }
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-      .form-field {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .form-field label {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: 11.5px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--text-faint);
-      }
-      .form-field input,
-      .form-field select,
-      .form-field textarea {
-        background: var(--surface-2);
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        padding: 13px 15px;
-        color: var(--text);
-        font-family: "Poppins", sans-serif;
-        font-size: 14.5px;
-        outline: none;
-        transition: border-color 0.25s;
-      }
-      .form-field input:focus,
-      .form-field select:focus,
-      .form-field textarea:focus {
-        border-color: var(--gold);
-      }
-      .form-field textarea {
-        resize: vertical;
-        min-height: 120px;
-      }
-      .contact-form .btn-primary {
-        justify-self: start;
-        border: none;
-      }
-      .contact-side {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .contact-side-card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 26px;
-      }
-      .contact-side-card .mono {
-        font-size: 11px;
-        color: var(--text-faint);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        display: block;
-        margin-bottom: 10px;
-      }
-      .contact-side-card a,
-      .contact-side-card span.value {
-        font-family: "Poppins", sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-      }
-      .contact-side-card a:hover {
-        color: var(--gold);
-      }
-      @media (max-width: 800px) {
-        .contact-layout {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-        .form-row {
-          grid-template-columns: 1fr;
-        }
-      }
-
-    </style>
+    <link href="./styles/output.css" rel="stylesheet" />
   </head>
-  <body>
-    <header>
-      <nav class="wrap">
-        <a href="index.html" class="logo">
-          <img src="oleq-logo.png" alt="Oleq logo" class="oleq-logo" />
+  <body
+    class="m-0 bg-background text-foreground font-[Poppins,sans-serif] text-base leading-[1.6] antialiased"
+  >
+    <header
+      class="fixed inset-x-0 top-0 z-[100] bg-background/80 backdrop-blur-[14px] border-b-2 border-border shadow-lg"
+    >
+      <nav
+        class="min-h-[82px] py-6 max-[680px]:min-h-[70px] max-[680px]:py-[18px] max-w-[1220px] mx-auto px-8 max-[680px]:px-5"
+      >
+        <a
+          href="index.html"
+          class="logo flex items-center gap-[9px] font-['Poppins'] font-bold text-[21px] tracking-[-0.02em]"
+        >
+          <img src="oleq-logo.png" alt="Oleq logo" class="oleq-logo max-w-10" />
           Oleq
         </a>
-        <div class="nav-links">
-          <a href="index.html" class="active">Home</a>
-          <a href="services.html" class="">Services</a>
-          <a href="about.html" class="">About Us</a>
+        <div class="nav-links hidden min-[681px]:flex items-center gap-[34px]">
+          <a href="index.html" class="active text-foreground">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About Us</a>
         </div>
-        <div class="nav-cta">
+        <div class="nav-cta flex items-center gap-[18px] max-[680px]:gap-2.5">
           <button
-            class="theme-toggle"
+            class="theme-toggle w-10 h-10 max-[680px]:w-9 max-[680px]:h-9 p-0 inline-flex items-center justify-center border border-border rounded-full bg-transparent text-muted-foreground cursor-pointer transition-all duration-200 hover:text-foreground hover:border-muted-foreground hover:-translate-y-0.5"
             type="button"
             id="themeToggle"
             aria-label="Switch to light mode"
             title="Switch to light mode"
           >
             <svg
-              class="moon-icon"
+              class="moon-icon w-[17px] h-[17px]"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -1352,7 +64,7 @@
               />
             </svg>
             <svg
-              class="sun-icon"
+              class="sun-icon w-[17px] h-[17px] hidden"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -1365,8 +77,16 @@
               />
             </svg>
           </button>
-          <a href="contact.html" class="btn btn-ghost ">Contact</a>
-          <button class="menu-toggle" aria-label="Menu" id="menuToggle">
+          <a
+            href="contact.html"
+            class="btn inline-flex items-center gap-2.5 px-[26px] py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-ghost border-border text-foreground hover:border-muted-foreground hover:-translate-y-0.5"
+            >Contact</a
+          >
+          <button
+            class="menu-toggle hidden max-[680px]:block bg-transparent border-0 text-foreground cursor-pointer p-1.5"
+            aria-label="Menu"
+            id="menuToggle"
+          >
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -1381,24 +101,37 @@
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="wrap hero-grid">
+      <section
+        class="hero pt-[168px] pb-[100px] max-[680px]:pt-[130px] max-[680px]:pb-[70px] overflow-hidden relative"
+      >
+        <div
+          class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5 hero-grid grid grid-cols-[1.05fr_.95fr] gap-16 items-center relative max-[960px]:grid-cols-1 max-[960px]:gap-14"
+        >
           <div>
-            <div class="eyebrow">
+            <div
+              class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+            >
+              <span class="w-[18px] h-px bg-primary shrink-0"></span>
               Digital infrastructure — built &amp; operated in Africa
             </div>
-            <h1>
+            <h1
+              class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(38px,4.6vw,62px)] mb-6"
+            >
               Building intelligent digital infrastructure
-              <span class="accent">for Africa.</span>
+              <span class="accent text-primary">for Africa.</span>
             </h1>
-            <p class="hero-sub">
+            <p
+              class="hero-sub text-[18px] text-muted-foreground max-w-[480px] mb-[38px]"
+            >
               Oleq designs, builds and operates the platforms that run
               insurance, education, property and payments — combining
               engineering, AI and data into systems that hold up at national
               scale.
             </p>
-            <div class="hero-ctas">
-              <a href="#contact" class="btn btn-primary"
+            <div class="hero-ctas flex flex-wrap gap-4 mb-14">
+              <a
+                href="#contact"
+                class="btn inline-flex items-center gap-2.5 px-[26px] py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-primary bg-gradient-to-r from-primary to-accent text-primary-foreground hover:-translate-y-0.5 hover:from-accent hover:to-primary"
                 >Talk to Oleq
                 <svg
                   viewBox="0 0 24 24"
@@ -1409,11 +142,15 @@
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </a>
-              <a href="services.html#industries" class="btn btn-ghost"
+              <a
+                href="services.html#industries"
+                class="btn inline-flex items-center gap-2.5 px-[26px] py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-ghost border-border text-foreground hover:border-muted-foreground hover:-translate-y-0.5"
                 >Explore our solutions</a
               >
             </div>
-            <div class="hero-stats">
+            <div
+              class="hero-stats grid grid-cols-4 gap-9 border-t border-border pt-[26px] max-[680px]:grid-cols-2 max-[680px]:gap-6"
+            >
               <div class="hero-stat"><b>500K+</b><span>MEMBERSHIPS</span></div>
               <div class="hero-stat"><b>4.9M+</b><span>LEARNERS</span></div>
               <div class="hero-stat"><b>12</b><span>COUNTRIES</span></div>
@@ -1423,12 +160,20 @@
             </div>
           </div>
 
-          <div class="map-wrap">
-            <div class="map-card">
-              <div class="map-card-head">
-                <span class="mono">PAYMENT NETWORK — LIVE</span>
-                <span class="live-tag"
-                  ><span class="live-dot"></span>NAIROBI HUB</span
+          <div class="map-wrap relative">
+            <div
+              class="map-card bg-card border border-border rounded-[20px] p-[22px] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]"
+            >
+              <div
+                class="map-card-head flex items-center justify-between mb-1.5 px-1"
+              >
+                <span class="mono font-mono">PAYMENT NETWORK — LIVE</span>
+                <span
+                  class="live-tag flex items-center gap-1.5 text-[11.5px] text-accent font-mono"
+                  ><span
+                    class="live-dot w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
+                  ></span
+                  >NAIROBI HUB</span
                 >
               </div>
               <svg
@@ -1440,111 +185,262 @@
           </div>
         </div>
       </section>
-      <section class="section" id="who">
-        <div class="wrap who-grid">
-          <div class="reveal">
-            <div class="eyebrow">Who we are</div>
-            <h2 style="font-size: clamp(26px, 3vw, 36px); margin-bottom: 20px">
+      <section class="section py-[120px] max-[680px]:py-20 relative" id="who">
+        <div
+          class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5 who-grid grid grid-cols-[.9fr_1.1fr] gap-[70px] items-start max-[960px]:grid-cols-1 max-[960px]:gap-10"
+        >
+          <div
+            class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+          >
+            <div
+              class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+            >
+              <span class="w-[18px] h-px bg-primary shrink-0"></span>Who we are
+            </div>
+            <h2
+              class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(26px,3vw,36px)] mb-5"
+            >
               A technology company, not a software shop.
             </h2>
-            <p style="color: var(--text-dim); font-size: 16px">
+            <p class="text-muted-foreground text-base">
               Oleq is an African technology company that builds and operates
               insurers, education networks, property portfolios and payment
               providers. We combine software engineering, payments
               infrastructure, AI, automation and data into systems designed to
               run, not just launch.
             </p>
-            <div class="capability-list" style="margin-top: 28px">
-              <span class="chip">Software Engineering</span>
-              <span class="chip">Payments</span>
-              <span class="chip">Artificial Intelligence</span>
-              <span class="chip">Automation</span>
-              <span class="chip">Data &amp; Analytics</span>
-              <span class="chip">Enterprise Integrations</span>
-              <span class="chip">Digital Channels</span>
+            <div class="capability-list flex flex-wrap gap-2.5 mt-7">
+              <span
+                class="chip px-4 py-2.5 border border-border rounded-full text-[13.5px] text-muted-foreground font-mono"
+                >Software Engineering</span
+              >
+              <span
+                class="chip px-4 py-2.5 border border-border rounded-full text-[13.5px] text-muted-foreground font-mono"
+                >Payments</span
+              >
+              <span
+                class="chip px-4 py-2.5 border border-border rounded-full text-[13.5px] text-muted-foreground font-mono"
+                >Artificial Intelligence</span
+              >
+              <span
+                class="chip px-4 py-2.5 border border-border rounded-full text-[13.5px] text-muted-foreground font-mono"
+                >Automation</span
+              >
+              <span
+                class="chip px-4 py-2.5 border border-border rounded-full text-[13.5px] text-muted-foreground font-mono"
+                >Data &amp; Analytics</span
+              >
+              <span
+                class="chip px-4 py-2.5 border border-border rounded-full text-[13.5px] text-muted-foreground font-mono"
+                >Enterprise Integrations</span
+              >
+              <span
+                class="chip px-4 py-2.5 border border-border rounded-full text-[13.5px] text-muted-foreground font-mono"
+                >Digital Channels</span
+              >
             </div>
           </div>
-          <div class="reveal">
-            <div class="pipeline">
-              <div class="pipeline-step">
-                <span class="idx">01</span><span class="label">Concept</span>
+          <div
+            class="reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+          >
+            <div class="pipeline mt-11 flex flex-col">
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >01</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Concept</span
+                >
               </div>
-              <div class="pipeline-step">
-                <span class="idx">02</span
-                ><span class="label">Product design</span>
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >02</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Product design</span
+                >
               </div>
-              <div class="pipeline-step">
-                <span class="idx">03</span
-                ><span class="label">Engineering</span>
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >03</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Engineering</span
+                >
               </div>
-              <div class="pipeline-step">
-                <span class="idx">04</span
-                ><span class="label">Integration</span>
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >04</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Integration</span
+                >
               </div>
-              <div class="pipeline-step">
-                <span class="idx">05</span><span class="label">Deployment</span>
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >05</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Deployment</span
+                >
               </div>
-              <div class="pipeline-step">
-                <span class="idx">06</span><span class="label">Support</span>
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >06</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Support</span
+                >
               </div>
-              <div class="pipeline-step">
-                <span class="idx">07</span><span class="label">Analytics</span>
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >07</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Analytics</span
+                >
               </div>
-              <div class="pipeline-step">
-                <span class="idx">08</span
-                ><span class="label">Continuous improvement</span>
+              <div
+                class="pipeline-step flex items-center gap-5 py-[15px] border-b border-dashed border-border last:border-b-0"
+              >
+                <span
+                  class="idx font-mono text-xs text-primary w-[26px] shrink-0"
+                  >08</span
+                ><span
+                  class="label font-['Poppins'] font-semibold text-[15.5px]"
+                  >Continuous improvement</span
+                >
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="section section-alt" id="platforms">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div class="eyebrow">In production</div>
-            <h2>Platforms Oleq has built and operates today</h2>
-            <p>
+      <section
+        class="section py-[120px] max-[680px]:py-20 relative section-alt bg-background border-y border-border"
+        id="platforms"
+      >
+        <div class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5">
+          <div
+            class="section-head max-w-[680px] mb-16 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+          >
+            <div
+              class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+            >
+              <span class="w-[18px] h-px bg-primary shrink-0"></span>In
+              production
+            </div>
+            <h2
+              class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(28px,3.2vw,42px)] mb-[18px]"
+            >
+              Platforms Oleq has built and operates today
+            </h2>
+            <p class="m-0 text-[17px] text-muted-foreground">
               Not concepts — live systems processing real transactions, messages
               and tenants across East Africa.
             </p>
           </div>
-          <div class="platform-strip">
-            <div class="platform-cell reveal">
+          <div
+            class="platform-strip grid grid-cols-4 gap-px bg-border border border-border rounded-[14px] overflow-hidden max-[960px]:grid-cols-2 max-[680px]:grid-cols-1"
+          >
+            <div
+              class="platform-cell bg-card p-[30px_26px] min-h-[190px] flex flex-col justify-between transition-colors duration-300 hover:bg-muted reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
               <div>
-                <span class="ptag">Communications</span>
-                <p class="pname" style="margin-top: 8px">ValidSMS</p>
-                <p class="pdesc">
+                <span
+                  class="font-mono text-[10.5px] text-accent uppercase tracking-[0.08em]"
+                  >Communications</span
+                >
+                <p
+                  class="pname font-['Poppins'] font-semibold text-[18px] mt-2 mb-1.5"
+                >
+                  ValidSMS
+                </p>
+                <p class="text-[13.5px] text-muted-foreground leading-[1.55]">
                   A bulk messaging platform processing per-sender queues at
                   scale, with delivery-receipt correlation and enterprise
                   accounting.
                 </p>
               </div>
             </div>
-            <div class="platform-cell reveal">
+            <div
+              class="platform-cell bg-card p-[30px_26px] min-h-[190px] flex flex-col justify-between transition-colors duration-300 hover:bg-muted reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
               <div>
-                <span class="ptag">PropTech</span>
-                <p class="pname" style="margin-top: 8px">Silqu</p>
-                <p class="pdesc">
+                <span
+                  class="ptag font-mono text-[10.5px] text-accent uppercase tracking-[0.08em]"
+                  >PropTech</span
+                >
+                <p
+                  class="pname font-['Poppins'] font-semibold text-[18px] mt-2 mb-1.5"
+                >
+                  Silqu
+                </p>
+                <p
+                  class="pdesc text-[13.5px] text-muted-foreground leading-[1.55]"
+                >
                   Property management SaaS covering tenants, billing, investor
                   units and financial reporting for portfolio operators.
                 </p>
               </div>
             </div>
-            <div class="platform-cell reveal">
+            <div
+              class="platform-cell bg-card p-[30px_26px] min-h-[190px] flex flex-col justify-between transition-colors duration-300 hover:bg-muted reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
               <div>
-                <span class="ptag">CPaaS</span>
-                <p class="pname" style="margin-top: 8px">OleComms</p>
-                <p class="pdesc">
+                <span
+                  class="ptag font-mono text-[10.5px] text-accent uppercase tracking-[0.08em]"
+                  >CPaaS</span
+                >
+                <p
+                  class="pname font-['Poppins'] font-semibold text-[18px] mt-2 mb-1.5"
+                >
+                  OleComms
+                </p>
+                <p
+                  class="pdesc text-[13.5px] text-muted-foreground leading-[1.55]"
+                >
                   A modular communications platform architecture spanning SMS,
                   messaging and event-driven domain services.
                 </p>
               </div>
             </div>
-            <div class="platform-cell reveal">
+            <div
+              class="platform-cell bg-card p-[30px_26px] min-h-[190px] flex flex-col justify-between transition-colors duration-300 hover:bg-muted reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
               <div>
-                <span class="ptag">Membership</span>
-                <p class="pname" style="margin-top: 8px">Kava</p>
-                <p class="pdesc">
+                <span
+                  class="ptag font-mono text-[10.5px] text-accent uppercase tracking-[0.08em]"
+                  >Membership</span
+                >
+                <p
+                  class="pname font-['Poppins'] font-semibold text-[18px] mt-2 mb-1.5"
+                >
+                  Kava
+                </p>
+                <p
+                  class="pdesc text-[13.5px] text-muted-foreground leading-[1.55]"
+                >
                   Membership and billing management with deadlock-safe batch
                   operations, built for high-volume group finance.
                 </p>
@@ -1553,55 +449,82 @@
           </div>
         </div>
       </section>
-      <section class="section section-alt" id="technology">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div class="eyebrow">Technology</div>
-            <h2>Engineering built for national-scale load</h2>
-            <p>
+      <section
+        class="section py-[120px] max-[680px]:py-20 relative section-alt bg-background border-y border-border"
+        id="technology"
+      >
+        <div class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5">
+          <div
+            class="section-head max-w-[680px] mb-16 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+          >
+            <div
+              class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+            >
+              <span class="w-[18px] h-px bg-primary shrink-0"></span>Technology
+            </div>
+            <h2
+              class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(28px,3.2vw,42px)] mb-[18px]"
+            >
+              Engineering built for national-scale load
+            </h2>
+            <p class="m-0 text-[17px] text-muted-foreground">
               Systems designed for millions of users and high transaction
               volumes — not proofs of concept that break under real traffic.
             </p>
           </div>
-          <div class="tech-grid reveal">
-            <div class="tech-cell">
-              <span class="mono">Applications</span>
-              <p>
+          <div
+            class="tech-grid grid grid-cols-3 border-t border-l border-border max-[960px]:grid-cols-2 max-[680px]:grid-cols-1 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+          >
+            <div
+              class="tech-cell border-r border-b border-border p-[26px_28px]"
+            >
+              <span class="mono font-mono">Applications</span>
+              <p class="m-0">
                 Web, mobile, USSD and SMS applications built for low-bandwidth
                 and high-density markets alike.
               </p>
             </div>
-            <div class="tech-cell">
-              <span class="mono">Integrations</span>
-              <p>
+            <div
+              class="tech-cell border-r border-b border-border p-[26px_28px]"
+            >
+              <span class="mono font-mono">Integrations</span>
+              <p class="m-0">
                 APIs, banking and mobile-money integrations, connecting core
                 systems to the rails that move money.
               </p>
             </div>
-            <div class="tech-cell">
-              <span class="mono">Infrastructure</span>
-              <p>
+            <div
+              class="tech-cell border-r border-b border-border p-[26px_28px]"
+            >
+              <span class="mono font-mono">Infrastructure</span>
+              <p class="m-0">
                 Cloud infrastructure and databases engineered for uptime, not
                 just launch-day demos.
               </p>
             </div>
-            <div class="tech-cell">
-              <span class="mono">Data</span>
-              <p>
+            <div
+              class="tech-cell border-r border-b border-border p-[26px_28px]"
+            >
+              <span class="mono font-mono">Data</span>
+              <p class="m-0">
                 Data engineering and analytics pipelines that turn transaction
                 volume into operational insight.
               </p>
             </div>
-            <div class="tech-cell">
-              <span class="mono">Intelligence</span>
-              <p>
+            <div
+              class="tech-cell border-r border-b border-border p-[26px_28px]"
+            >
+              <span class="mono font-mono">Intelligence</span>
+              <p class="m-0">
                 Artificial intelligence and automation embedded directly into
                 product workflows.
               </p>
             </div>
-            <div class="tech-cell">
-              <span class="mono">Security</span>
-              <p>
+            <div
+              class="tech-cell border-r border-b border-border p-[26px_28px]"
+            >
+              <span class="mono font-mono">Security</span>
+              <p class="m-0">
                 Security practices built around financial-grade data — because
                 our platforms move money.
               </p>
@@ -1609,57 +532,123 @@
           </div>
         </div>
       </section>
-      <section class="section" id="why">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <div class="eyebrow">Why Oleq</div>
-            <h2>Six reasons enterprises choose us</h2>
+      <section class="section py-[120px] max-[680px]:py-20 relative" id="why">
+        <div class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5">
+          <div
+            class="section-head max-w-[680px] mb-16 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+          >
+            <div
+              class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+            >
+              <span class="w-[18px] h-px bg-primary shrink-0"></span>Why Oleq
+            </div>
+            <h2
+              class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(28px,3.2vw,42px)] mb-[18px]"
+            >
+              Six reasons enterprises choose us
+            </h2>
           </div>
-          <div class="why-grid">
-            <div class="why-card reveal">
-              <span class="num">01</span>
-              <h3>Proven at scale</h3>
-              <p>
+          <div
+            class="why-grid grid grid-cols-3 gap-[26px] max-[960px]:grid-cols-2 max-[680px]:grid-cols-1"
+          >
+            <div
+              class="why-card reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
+              <span
+                class="num font-mono text-[13px] text-muted-foreground mb-4 block"
+                >01</span
+              >
+              <h3
+                class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[19px] mb-2.5"
+              >
+                Proven at scale
+              </h3>
+              <p class="m-0">
                 Technology already serving millions of users in production, not
                 pilot.
               </p>
             </div>
-            <div class="why-card reveal">
-              <span class="num">02</span>
-              <h3>African experience</h3>
-              <p>
+            <div
+              class="why-card reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
+              <span
+                class="num font-mono text-[13px] text-muted-foreground mb-4 block"
+                >02</span
+              >
+              <h3
+                class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[19px] mb-2.5"
+              >
+                African experience
+              </h3>
+              <p class="m-0">
                 Platforms operating across multiple African markets and
                 regulatory environments.
               </p>
             </div>
-            <div class="why-card reveal">
-              <span class="num">03</span>
-              <h3>Industry expertise</h3>
-              <p>
+            <div
+              class="why-card reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
+              <span
+                class="num font-mono text-[13px] text-muted-foreground mb-4 block"
+                >03</span
+              >
+              <h3
+                class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[19px] mb-2.5"
+              >
+                Industry expertise
+              </h3>
+              <p class="m-0">
                 Deep, specific experience in insurance, education, property and
                 payments.
               </p>
             </div>
-            <div class="why-card reveal">
-              <span class="num">04</span>
-              <h3>End-to-end capability</h3>
-              <p>
+            <div
+              class="why-card reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
+              <span
+                class="num font-mono text-[13px] text-muted-foreground mb-4 block"
+                >04</span
+              >
+              <h3
+                class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[19px] mb-2.5"
+              >
+                End-to-end capability
+              </h3>
+              <p class="m-0">
                 Product, engineering, integrations, payments, AI, analytics and
                 support — one organization.
               </p>
             </div>
-            <div class="why-card reveal">
-              <span class="num">05</span>
-              <h3>Payments expertise</h3>
-              <p>
+            <div
+              class="why-card reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
+              <span
+                class="num font-mono text-[13px] text-muted-foreground mb-4 block"
+                >05</span
+              >
+              <h3
+                class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[19px] mb-2.5"
+              >
+                Payments expertise
+              </h3>
+              <p class="m-0">
                 Real-world experience building payment platforms and gateway
                 infrastructure that moves money daily.
               </p>
             </div>
-            <div class="why-card reveal">
-              <span class="num">06</span>
-              <h3>Built for growth</h3>
-              <p>
+            <div
+              class="why-card reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+            >
+              <span
+                class="num font-mono text-[13px] text-muted-foreground mb-4 block"
+                >06</span
+              >
+              <h3
+                class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[19px] mb-2.5"
+              >
+                Built for growth
+              </h3>
+              <p class="m-0">
                 Technology designed to scale as your users, transactions and
                 markets grow.
               </p>
@@ -1667,19 +656,34 @@
           </div>
         </div>
       </section>
-      <section class="vision" id="vision">
-        <div class="wrap reveal">
-          <div class="eyebrow" style="justify-content: center">
+      <section
+        class="vision text-center py-[130px] relative bg-[radial-gradient(900px_400px_at_50%_0%,color-mix(in_oklch,var(--accent)_15%,transparent),transparent_60%)]"
+        id="vision"
+      >
+        <div
+          class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+        >
+          <div
+            class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+          >
             LET'S BUILD TOGETHER
           </div>
-          <h2>Build software that grows with your business.</h2>
-          <div class="vision-mission">
+          <h2
+            class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(28px,3.2vw,42px)] mb-[18px]"
+          >
+            Build software that grows with your business.
+          </h2>
+          <div
+            class="vision-mission max-w-[640px] mx-auto mt-9 px-[34px] py-[26px] border border-border rounded-[14px] font-['Poppins'] text-[18px] text-muted-foreground font-medium"
+          >
             Tell us what you're working on — whether it's a new product, a
             system that needs rebuilding, or an idea you haven't started yet.
             We'd love to hear about it.
           </div>
-          <div style="margin-top: 34px">
-            <a href="contact.html" class="btn btn-primary"
+          <div class="mt-[34px]">
+            <a
+              href="contact.html"
+              class="btn inline-flex items-center gap-2.5 px-[26px] py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-primary bg-gradient-to-r from-primary to-accent text-primary-foreground hover:-translate-y-0.5 hover:from-accent hover:to-primary"
               >Get in touch
               <svg
                 viewBox="0 0 24 24"
@@ -1693,80 +697,138 @@
           </div>
         </div>
       </section>
-      <section class="section section-alt" id="faq">
-        <div class="wrap">
+      <section
+        class="section py-[120px] max-[680px]:py-20 relative section-alt bg-background border-y border-border"
+        id="faq"
+      >
+        <div class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5">
           <div
-            class="section-head reveal"
-            style="margin: 0 auto 56px; text-align: center"
+            class="section-head max-w-[680px] mb-14 mx-auto text-center reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
           >
-            <div class="eyebrow" style="justify-content: center">
+            <div
+              class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+            >
               Common questions
             </div>
-            <h2>Before you talk to us</h2>
+            <h2
+              class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(28px,3.2vw,42px)] mb-[18px]"
+            >
+              Before you talk to us
+            </h2>
           </div>
-          <div class="faq reveal">
-            <div class="faq-item">
-              <div class="faq-q">
-                <h4>
+          <div
+            class="faq max-w-[820px] mx-auto reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+          >
+            <div class="faq-item border-b border-border py-[22px]">
+              <div
+                class="faq-q flex items-center justify-between gap-5 cursor-pointer"
+              >
+                <h4
+                  class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em]"
+                >
                   Does Oleq build custom platforms, or only integrate existing
                   products?
                 </h4>
-                <span class="plus"></span>
+                <span
+                  class="plus w-[22px] h-[22px] shrink-0 flex items-center justify-center text-[22px] leading-none text-muted-foreground"
+                ></span>
               </div>
-              <div class="faq-a">
-                <p>
+              <div
+                class="faq-a max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out"
+              >
+                <p class="m-0">
                   Both. We build platforms from the ground up where none exist,
                   and integrate into your existing core systems where they do —
                   the same engineering team handles both paths.
                 </p>
               </div>
             </div>
-            <div class="faq-item">
-              <div class="faq-q">
-                <h4>Which African markets can the payment gateway reach?</h4>
-                <span class="plus"></span>
+            <div class="faq-item border-b border-border py-[22px]">
+              <div
+                class="faq-q flex items-center justify-between gap-5 cursor-pointer"
+              >
+                <h4
+                  class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em]"
+                >
+                  Which African markets can the payment gateway reach?
+                </h4>
+                <span
+                  class="plus w-[22px] h-[22px] shrink-0 flex items-center justify-center text-[22px] leading-none text-muted-foreground"
+                ></span>
               </div>
-              <div class="faq-a">
-                <p>
+              <div
+                class="faq-a max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out"
+              >
+                <p class="m-0">
                   The gateway is live across 12 African countries, covering
                   mobile money, banks and card networks through a single
                   integration.
                 </p>
               </div>
             </div>
-            <div class="faq-item">
-              <div class="faq-q">
-                <h4>Do you support institutions after launch?</h4>
-                <span class="plus"></span>
+            <div class="faq-item border-b border-border py-[22px]">
+              <div
+                class="faq-q flex items-center justify-between gap-5 cursor-pointer"
+              >
+                <h4
+                  class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em]"
+                >
+                  Do you support institutions after launch?
+                </h4>
+                <span
+                  class="plus w-[22px] h-[22px] shrink-0 flex items-center justify-center text-[22px] leading-none text-muted-foreground"
+                ></span>
               </div>
-              <div class="faq-a">
-                <p>
+              <div
+                class="faq-a max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out"
+              >
+                <p class="m-0">
                   Yes. Support, analytics and continuous improvement are part of
                   every engagement — we operate what we build, not just hand it
                   over.
                 </p>
               </div>
             </div>
-            <div class="faq-item">
-              <div class="faq-q">
-                <h4>What size of institution do you typically work with?</h4>
-                <span class="plus"></span>
+            <div class="faq-item border-b border-border py-[22px]">
+              <div
+                class="faq-q flex items-center justify-between gap-5 cursor-pointer"
+              >
+                <h4
+                  class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em]"
+                >
+                  What size of institution do you typically work with?
+                </h4>
+                <span
+                  class="plus w-[22px] h-[22px] shrink-0 flex items-center justify-center text-[22px] leading-none text-muted-foreground"
+                ></span>
               </div>
-              <div class="faq-a">
-                <p>
+              <div
+                class="faq-a max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out"
+              >
+                <p class="m-0">
                   From growing platforms to institutions processing millions of
                   transactions — our systems are built to scale with you rather
                   than be replaced at your next growth stage.
                 </p>
               </div>
             </div>
-            <div class="faq-item">
-              <div class="faq-q">
-                <h4>Can Oleq work alongside our existing engineering team?</h4>
-                <span class="plus"></span>
+            <div class="faq-item border-b border-border py-[22px]">
+              <div
+                class="faq-q flex items-center justify-between gap-5 cursor-pointer"
+              >
+                <h4
+                  class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em]"
+                >
+                  Can Oleq work alongside our existing engineering team?
+                </h4>
+                <span
+                  class="plus w-[22px] h-[22px] shrink-0 flex items-center justify-center text-[22px] leading-none text-muted-foreground"
+                ></span>
               </div>
-              <div class="faq-a">
-                <p>
+              <div
+                class="faq-a max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out"
+              >
+                <p class="m-0">
                   Regularly. We integrate with in-house teams on specific
                   modules, or take ownership of full platform delivery —
                   whichever fits how you operate.
@@ -1777,15 +839,28 @@
         </div>
       </section>
       <!-- CTA -->
-      <section class="cta-section">
-        <div class="wrap reveal">
-          <div class="eyebrow">Let's build what's next</div>
-          <h2>
+      <section
+        class="cta-section py-[110px] text-center border-t border-border"
+      >
+        <div
+          class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5 reveal opacity-0 translate-y-6 transition-all duration-700 ease-out"
+        >
+          <div
+            class="eyebrow font-mono text-[12.5px] tracking-[0.14em] uppercase text-primary flex items-center gap-2.5 mb-[18px]"
+          >
+            <span class="w-[18px] h-px bg-primary shrink-0"></span>Let's build
+            what's next
+          </div>
+          <h2
+            class="font-[Poppins,sans-serif] font-semibold leading-[1.08] tracking-[-0.01em] text-[clamp(28px,3.2vw,42px)] mb-[18px]"
+          >
             Have a complex business problem?<br />Let's build the technology to
             solve it.
           </h2>
-          <div class="cta-btns">
-            <a href="contact.html" class="btn btn-primary"
+          <div class="cta-btns flex flex-wrap justify-center gap-4 mb-[60px]">
+            <a
+              href="contact.html"
+              class="btn inline-flex items-center gap-2.5 px-[26px] py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-primary bg-gradient-to-r from-primary to-accent text-primary-foreground hover:-translate-y-0.5 hover:from-accent hover:to-primary"
               >Talk to Oleq
               <svg
                 viewBox="0 0 24 24"
@@ -1796,22 +871,34 @@
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </a>
-            <a href="about.html" class="btn btn-ghost">Meet the team</a>
+            <a
+              href="about.html"
+              class="btn inline-flex items-center gap-2.5 px-[26px] py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-ghost border-border text-foreground hover:border-muted-foreground hover:-translate-y-0.5"
+              >Meet the team</a
+            >
           </div>
         </div>
       </section>
-
     </main>
 
-    <footer>
-      <div class="wrap">
-        <div class="footer-top">
+    <footer class="border-t border-border pt-[60px] pb-[34px]">
+      <div class="wrap max-w-[1220px] mx-auto px-8 max-[680px]:px-5">
+        <div
+          class="footer-top grid grid-cols-[1.2fr_repeat(4,.85fr)] gap-9 mb-14 max-[960px]:grid-cols-2 max-[680px]:grid-cols-1"
+        >
           <div class="footer-brand">
-            <a href="index.html" class="logo">
-              <img src="oleq-logo.png" alt="Oleq logo" class="oleq-logo" />
+            <a
+              href="index.html"
+              class="logo flex items-center gap-[9px] font-['Poppins'] font-bold text-[21px] tracking-[-0.02em]"
+            >
+              <img
+                src="oleq-logo.png"
+                alt="Oleq logo"
+                class="oleq-logo max-w-10"
+              />
               Oleq
             </a>
-            <p>
+            <p class="m-0">
               Intelligent digital infrastructure for insurance, education,
               property and payments — designed, built and operated across
               Africa.
@@ -1850,9 +937,13 @@
             <a href="contact.html">WhatsApp — @oleq</a>
           </div>
         </div>
-        <div class="footer-bottom">
+        <div
+          class="footer-bottom flex items-center justify-between flex-wrap gap-3.5 pt-[26px] border-t border-border text-[13px] text-muted-foreground"
+        >
           <span>© 2026 Oleq. All rights reserved.</span>
-          <span class="mono">BUILT &amp; OPERATED IN NAIROBI, KENYA</span>
+          <span class="mono font-mono"
+            >BUILT &amp; OPERATED IN NAIROBI, KENYA</span
+          >
         </div>
       </div>
     </footer>
@@ -1865,19 +956,29 @@
       // ---------- theme ----------
       const themeToggle = document.getElementById("themeToggle");
       const savedTheme = localStorage.getItem("oleq-theme");
-      if (savedTheme === "light")
-        document.documentElement.dataset.theme = "light";
+
+      // shadcn/Tailwind dark mode is controlled by the .dark class on <html>.
+      // Dark mode is the default to match the original Oleq design.
+      if (savedTheme !== "light") {
+        document.documentElement.classList.add("dark");
+      }
+
       function updateThemeToggle() {
-        const isLight = document.documentElement.dataset.theme === "light";
-        const label = isLight ? "Switch to dark mode" : "Switch to light mode";
+        const isDark = document.documentElement.classList.contains("dark");
+        const label = isDark ? "Switch to light mode" : "Switch to dark mode";
         themeToggle.setAttribute("aria-label", label);
         themeToggle.setAttribute("title", label);
+        document
+          .querySelector(".moon-icon")
+          ?.classList.toggle("hidden", !isDark);
+        document.querySelector(".sun-icon")?.classList.toggle("hidden", isDark);
       }
+
       updateThemeToggle();
+
       themeToggle.addEventListener("click", () => {
-        const isLight = document.documentElement.dataset.theme === "light";
-        document.documentElement.dataset.theme = isLight ? "dark" : "light";
-        localStorage.setItem("oleq-theme", isLight ? "dark" : "light");
+        const isDark = document.documentElement.classList.toggle("dark");
+        localStorage.setItem("oleq-theme", isDark ? "dark" : "light");
         updateThemeToggle();
       });
 
@@ -1886,12 +987,34 @@
       const navLinks = document.querySelector(".nav-links");
       menuToggle &&
         menuToggle.addEventListener("click", () => {
-          navLinks.classList.toggle("mobile-open");
+          navLinks.classList.toggle("flex");
+          navLinks.classList.toggle("fixed");
+          navLinks.classList.toggle("top-[70px]");
+          navLinks.classList.toggle("left-0");
+          navLinks.classList.toggle("right-0");
+          navLinks.classList.toggle("bg-background");
+          navLinks.classList.toggle("flex-col");
+          navLinks.classList.toggle("p-6");
+          navLinks.classList.toggle("gap-5");
+          navLinks.classList.toggle("border-b");
+          navLinks.classList.toggle("border-border");
         });
       document.querySelectorAll(".nav-links a").forEach((a) =>
         a.addEventListener("click", () => {
           if (window.innerWidth <= 680) {
-            navLinks.classList.remove("mobile-open");
+            navLinks.classList.remove(
+              "flex",
+              "fixed",
+              "top-[70px]",
+              "left-0",
+              "right-0",
+              "bg-background",
+              "flex-col",
+              "p-6",
+              "gap-5",
+              "border-b",
+              "border-border",
+            );
           }
         }),
       );
@@ -1901,7 +1024,8 @@
         (entries) => {
           entries.forEach((e) => {
             if (e.isIntersecting) {
-              e.target.classList.add("in");
+              e.target.classList.remove("opacity-0", "translate-y-6");
+              e.target.classList.add("opacity-100", "translate-y-0");
               io.unobserve(e.target);
             }
           });
@@ -1947,11 +1071,13 @@
           const isOpen = item.classList.contains("open");
           document.querySelectorAll(".faq-item.open").forEach((o) => {
             o.classList.remove("open");
-            o.querySelector(".faq-a").style.maxHeight = null;
+            o.querySelector(".faq-a").classList.remove("max-h-[500px]");
+            o.querySelector(".plus").textContent = "+";
           });
           if (!isOpen) {
             item.classList.add("open");
-            a.style.maxHeight = a.scrollHeight + "px";
+            a.classList.add("max-h-[500px]");
+            item.querySelector(".plus").textContent = "−";
           }
         });
       });
@@ -2017,7 +1143,7 @@
         mask.forEach((range, row) => {
           for (let col = range[0]; col <= range[1]; col++) {
             const p = pos(row, col);
-            svgContent += `<circle cx="${p.x}" cy="${p.y}" r="2" class="node-land"/>`;
+            svgContent += `<circle cx="${p.x}" cy="${p.y}" r="2" class="fill-border"/>`;
           }
         });
 
@@ -2027,18 +1153,18 @@
           const p = pos(h.row, h.col);
           const mx = (p.x + hqPos.x) / 2,
             my = (p.y + hqPos.y) / 2 - 22;
-          svgContent += `<path d="M ${p.x} ${p.y} Q ${mx} ${my} ${hqPos.x} ${hqPos.y}" class="net-line"/>`;
+          svgContent += `<path d="M ${p.x} ${p.y} Q ${mx} ${my} ${hqPos.x} ${hqPos.y}" class="fill-none stroke-accent stroke-[1.1] opacity-[0.55] [stroke-dasharray:4_4] animate-[dash-flow_18s_linear_infinite]"/>`;
         });
 
         // hub nodes
         hubs.forEach((h) => {
           const p = pos(h.row, h.col);
-          svgContent += `<circle cx="${p.x}" cy="${p.y}" r="4.2" class="node-hub"/>`;
+          svgContent += `<circle cx="${p.x}" cy="${p.y}" r="4.2" class="fill-primary [filter:drop-shadow(0_0_6px_rgba(124,58,237,.7))]"/>`;
         });
 
         // HQ node
-        svgContent += `<circle cx="${hqPos.x}" cy="${hqPos.y}" r="6" class="node-hq"/>`;
-        svgContent += `<text x="${hqPos.x + 10}" y="${hqPos.y + 3}" class="node-label">${hqLabel || "NAIROBI"}</text>`;
+        svgContent += `<circle cx="${hqPos.x}" cy="${hqPos.y}" r="6" class="fill-accent [filter:drop-shadow(0_0_9px_rgba(37,99,235,.9))]"/>`;
+        svgContent += `<text x="${hqPos.x + 10}" y="${hqPos.y + 3}" class="font-mono text-[8.5px] fill-muted-foreground">${hqLabel || "NAIROBI"}</text>`;
 
         svg.innerHTML = svgContent;
       }
@@ -2053,6 +1179,5 @@
       data-cf-beacon='{"version":"2024.11.0","token":"cdce08abd52442ffb0f63d8bb3de7e73","r":1}'
       crossorigin="anonymous"
     ></script>
-
   </body>
 </html>
