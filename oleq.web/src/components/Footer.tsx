@@ -8,7 +8,6 @@ const nav = [
       { link: '/services#finance', name: 'Finance' },
       { link: '/services#education', name: 'Education' },
       { link: '/services#health', name: 'Health' },
-      { link: '/services#delivery', name: 'Delivery services' },
     ],
   },
   {
