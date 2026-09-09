@@ -37,9 +37,9 @@ const nav = [
 
 export default function Footer() {
   return (
-    <footer className="border-t">
+    <footer className="bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.24),transparent_28%),linear-gradient(180deg,#020817_0%,#0f172a_35%,#111827_100%)] text-slate-100">
       <div className="container px-8">
-        <div className="py-4 grid grid-cols-[1.2fr_repeat(4,.85fr)] gap-9 mb-14 max-[960px]:grid-cols-2 max-[680px]:grid-cols-1">
+        <div className="grid grid-cols-[1.2fr_repeat(4,.85fr)] gap-9 py-4 pb-14 max-[960px]:grid-cols-2 max-[680px]:grid-cols-1">
           <div className="footer-brand">
             <Link
               to="/"
@@ -73,7 +73,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex items-center flex-col gap-4 md:flex-row justify-between border-t border-border text-xs py-2 text-muted-foreground">
+        <div className="flex items-center flex-col gap-4 border-t border-white/10 py-2 text-xs text-slate-300 md:flex-row justify-between">
           <div>© {new Date().getFullYear()} Oleq. All rights reserved.</div>
           <ThemeToggle />
           <div className="mono font-mono">
