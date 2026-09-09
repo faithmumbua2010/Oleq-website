@@ -117,7 +117,7 @@ function Home() {
           <div className="flex flex-col gap-6 sm:items-end">
             <div className="mx-auto w-full max-w-2xl text-center">
               <h2 className="section-title">
-                Three projects, built around real work.
+                Projects, built around real work.
               </h2>
               <p className="mt-5 leading-7 text-muted-foreground">
                 Explore a sample of the digital products and operating platforms
