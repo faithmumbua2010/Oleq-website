@@ -54,27 +54,29 @@ function Services() {
         </div>
       </section>
       <section
-        className="mx-auto max-w-[1220px] px-5 py-20 sm:px-8 sm:py-28"
+        className="bg-white px-5 py-20 sm:px-8 sm:py-28 dark:bg-slate-950/80"
         id="delivery"
       >
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title, copy }) => (
-            <article
-              key={title}
-              className="rounded-2xl border border-border bg-card p-7"
-            >
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Icon size={24} />
-              </span>
-              <h2 className="mt-8 font-[Poppins,sans-serif] text-xl font-semibold">
-                {title}
-              </h2>
-              <p className="mt-3 leading-7 text-muted-foreground">{copy}</p>
-            </article>
-          ))}
+        <div className="mx-auto max-w-[1220px]">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {services.map(({ icon: Icon, title, copy }) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-border bg-card p-7"
+              >
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon size={24} />
+                </span>
+                <h2 className="mt-8 font-[Poppins,sans-serif] text-xl font-semibold">
+                  {title}
+                </h2>
+                <p className="mt-3 leading-7 text-muted-foreground">{copy}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-      <section className="border-y border-border bg-card/50 py-20 sm:py-28">
+      <section className="bg-slate-100 py-20 sm:py-28 dark:bg-slate-900/60">
         <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
           <p className="section-kicker">Where we focus</p>
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
@@ -112,19 +114,21 @@ function Services() {
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-[1220px] px-5 py-20 text-center sm:px-8 sm:py-28">
-        <p className="section-kicker justify-center">
-          Start with the right question
-        </p>
-        <h2 className="section-title mx-auto max-w-2xl">
-          Tell us where your organisation needs to move next.
-        </h2>
-        <Link
-          to="/contact"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground"
-        >
-          Request a quote <ArrowRight size={18} />
-        </Link>
+      <section className="bg-slate-50 px-5 py-20 text-center sm:px-8 sm:py-28 dark:bg-slate-950/70">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="section-kicker justify-center">
+            Start with the right question
+          </p>
+          <h2 className="section-title mx-auto max-w-2xl">
+            Tell us where your organisation needs to move next.
+          </h2>
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground"
+          >
+            Request a quote <ArrowRight size={18} />
+          </Link>
+        </div>
       </section>
     </div>
   )

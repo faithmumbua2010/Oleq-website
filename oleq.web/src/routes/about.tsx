@@ -7,24 +7,17 @@ function About() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto grid max-w-[1220px] items-center gap-10 px-5 sm:px-8 lg:grid-cols-[.95fr_1.05fr]">
-          <div>
+        <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
+          <div className="max-w-4xl">
             <p className="section-kicker">About Oleq</p>
             <h1 className="page-title">
               Technology that stays close to the people it serves.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
               Oleq is an African technology company for organisations doing work
               that matters. We combine local context with clear product thinking
               and serious engineering.
             </p>
-          </div>
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-card p-3 shadow-xl shadow-sky-950/10">
-            <img
-              src="/images/oleq-infrastructure-collage.png"
-              alt="Oleq technology operating across Africa"
-              className="aspect-[1.45/1] w-full rounded-[1rem] object-cover object-[68%_center]"
-            />
           </div>
         </div>
       </section>
@@ -64,7 +57,35 @@ function About() {
           </div>
         </div>
       </section>
-      <section className="border-y border-border bg-card/50 py-20 sm:py-28">
+      <section className="bg-slate-950 px-5 py-20 text-white sm:px-8 sm:py-24">
+        <div className="mx-auto grid max-w-[1220px] gap-12 sm:px-8 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[.14em] text-sky-300">
+              Our mission
+            </p>
+            <h2 className="mt-4 max-w-xl font-[Poppins,sans-serif] text-3xl font-semibold leading-tight sm:text-4xl">
+              Make important work easier to run, understand and grow.
+            </h2>
+            <p className="mt-5 max-w-xl leading-7 text-slate-300">
+              We turn complex operational needs into dependable digital products
+              that help organisations serve people better every day.
+            </p>
+          </div>
+          <div className="border-t border-white/20 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+            <p className="text-sm font-bold uppercase tracking-[.14em] text-lime-300">
+              Our vision
+            </p>
+            <h2 className="mt-4 max-w-xl font-[Poppins,sans-serif] text-3xl font-semibold leading-tight sm:text-4xl">
+              A more connected, capable and confident Africa.
+            </h2>
+            <p className="mt-5 max-w-xl leading-7 text-slate-300">
+              We imagine technology that strengthens local businesses and the
+              communities, teams and customers around them.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="bg-slate-100 py-20 sm:py-28 dark:bg-slate-900/60">
         <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
           <p className="section-kicker">The Oleq approach</p>
           <div className="mt-10 grid gap-4 md:grid-cols-3">

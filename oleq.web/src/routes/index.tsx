@@ -1,60 +1,33 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import {
-  ArrowRight,
-  BadgeCheck,
-  BrainCircuit,
-  ChartNoAxesCombined,
-  Quote,
-  ShieldCheck,
-  Workflow,
-} from 'lucide-react'
+import { ArrowRight, BadgeCheck } from 'lucide-react'
 import ProjectCard from '#/components/ProjectCard'
 import HeroSection from '#/components/home/hero-section'
+import HowWeWork from '#/components/home/how-we-work'
 import { projects } from '#/data/projects'
 
 export const Route = createFileRoute('/')({ component: Home })
-
-const capabilities = [
-  {
-    icon: Workflow,
-    title: 'End-to-end delivery',
-    copy: 'From the first product sketch to dependable day-to-day operations.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Built for trust',
-    copy: 'Financial-grade thinking around reliability, data and security.',
-  },
-  {
-    icon: BrainCircuit,
-    title: 'Intelligence inside',
-    copy: 'Practical AI and automation embedded where work actually happens.',
-  },
-  {
-    icon: ChartNoAxesCombined,
-    title: 'Designed to grow',
-    copy: 'Systems shaped for the next market, milestone and million users.',
-  },
-]
 
 const testimonials = [
   {
     quote:
       'Oleq brought product clarity and engineering discipline to a genuinely complex operational challenge.',
-    name: 'Operations leader',
-    company: 'East African financial services business',
+    name: 'Amina K.',
+    role: 'Chief Operations Officer',
+    initials: 'AK',
   },
   {
     quote:
       'The team understood that a platform is only useful if the people behind it can run it confidently every day.',
-    name: 'Programme director',
-    company: 'Regional education network',
+    name: 'David M.',
+    role: 'Programme Director',
+    initials: 'DM',
   },
   {
     quote:
       'They asked the hard questions early, then delivered a system that feels simple for our teams and customers.',
-    name: 'Product sponsor',
-    company: 'Health services organisation',
+    name: 'Njeri W.',
+    role: 'Product Sponsor',
+    initials: 'NW',
   },
 ]
 
@@ -73,44 +46,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-5 py-20 sm:px-8 sm:py-28 dark:bg-slate-900/70">
-        <div className="mx-auto max-w-3xl rounded-3xl bg-slate-950 px-6 py-10 text-center text-white shadow-xl shadow-slate-950/10 sm:px-12 sm:py-12 dark:bg-slate-800">
-          <p className="text-sm font-bold uppercase tracking-[.14em] text-sky-300">
-            How we work
-          </p>
-          <h2 className="mt-4 font-[Poppins,sans-serif] text-3xl font-semibold leading-tight sm:text-4xl">
-            A hands-on technology partner, from problem to progress.
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-300">
-            We bring product, engineering, data and operational thinking
-            together—so the result is useful after launch, not just impressive
-            on launch day.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {capabilities.map(({ icon: Icon, title, copy }, index) => (
-            <article
-              key={title}
-              className="rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg hover:shadow-sky-950/5"
-            >
-              <div className="flex items-center justify-between">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <Icon size={22} />
-                </span>
-                <span className="font-mono text-xs text-muted-foreground">
-                  0{index + 1}
-                </span>
-              </div>
-              <h3 className="mt-7 font-[Poppins,sans-serif] text-lg font-semibold">
-                {title}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                {copy}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <HowWeWork />
 
       <section className="bg-white px-5 py-20 sm:px-8 sm:py-28 dark:bg-slate-950/80">
         <div className="mx-auto max-w-[1220px] sm:px-8">
@@ -162,23 +98,24 @@ function Home() {
           <div className="grid gap-4 md:grid-cols-3">
             {testimonials.map((testimonial) => (
               <figure
-                key={testimonial.company}
+                key={testimonial.name}
                 className="flex min-h-72 flex-col rounded-2xl border border-border bg-card p-6"
               >
-                <Quote
-                  className="text-primary"
-                  size={27}
-                  fill="currentColor"
-                  fillOpacity=".12"
-                />
-                <blockquote className="mt-6 text-[15px] leading-7 text-foreground">
+                <blockquote className="text-[15px] leading-7 text-foreground">
                   “{testimonial.quote}”
                 </blockquote>
                 <figcaption className="mt-auto border-t border-border pt-5 text-sm">
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="mt-1 leading-5 text-muted-foreground">
-                    {testimonial.company}
-                  </p>
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-slate-900 text-xs font-bold text-white dark:bg-slate-700">
+                      {testimonial.initials}
+                    </span>
+                    <div>
+                      <p className="font-bold">{testimonial.name}</p>
+                      <p className="mt-1 leading-5 text-muted-foreground">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
                 </figcaption>
               </figure>
             ))}

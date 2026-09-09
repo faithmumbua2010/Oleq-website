@@ -1,6 +1,12 @@
+import { useState } from 'react'
 import { Link } from '@tanstack/react-router'
+import { Menu, X } from 'lucide-react'
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const closeMenu = () => setIsMenuOpen(false)
+
   return (
     <header className="sticky inset-x-0 top-0 z-[100] border-b border-border bg-background/90 backdrop-blur-[14px]">
       <nav className="container flex items-center justify-between px-5 py-4 sm:px-8">
@@ -60,13 +66,71 @@ export default function Header() {
             Request a quote
           </Link>
         </div>
-        <Link
-          to="/contact"
-          className="rounded-full bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground no-underline lg:hidden"
-        >
-          Get a quote
-        </Link>
+        <div className="flex items-center gap-2 lg:hidden">
+          <Link
+            to="/contact"
+            className="rounded-full bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground no-underline"
+          >
+            Get a quote
+          </Link>
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground"
+            aria-label={
+              isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+            }
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
+
+      {isMenuOpen ? (
+        <div
+          id="mobile-navigation"
+          className="border-t border-border bg-background px-5 py-4 lg:hidden sm:px-8"
+        >
+          <div className="flex flex-col gap-1">
+            <Link to="/" onClick={closeMenu} className="nav-link px-2 py-3">
+              Home
+            </Link>
+            <Link
+              to="/services"
+              onClick={closeMenu}
+              className="nav-link px-2 py-3"
+            >
+              Services
+            </Link>
+            <Link
+              to="/projects"
+              onClick={closeMenu}
+              className="nav-link px-2 py-3"
+            >
+              Projects
+            </Link>
+            <Link
+              to="/about"
+              onClick={closeMenu}
+              className="nav-link px-2 py-3"
+            >
+              About Us
+            </Link>
+            <Link to="/team" onClick={closeMenu} className="nav-link px-2 py-3">
+              Team
+            </Link>
+            <Link
+              to="/contact"
+              onClick={closeMenu}
+              className="mt-2 rounded-full bg-primary px-4 py-3 text-center text-sm font-bold text-primary-foreground no-underline"
+            >
+              Request a quote
+            </Link>
+          </div>
+        </div>
+      ) : null}
     </header>
   )
 }
