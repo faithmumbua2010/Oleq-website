@@ -131,7 +131,7 @@ export default function HeroSection() {
           </div>
           <h1 className="mb-6 font-[Poppins,sans-serif] text-[clamp(38px,4.6vw,62px)] font-semibold leading-[1.08] tracking-[-0.01em]">
             Building intelligent digital infrastructure
-            <span className="accent block text-primary">for Africa.</span>
+            <span className="mt-2 block text-primary">for Africa.</span>
           </h1>
           <p className="hero-sub mb-9.5 max-w-120 text-[18px] text-muted-foreground">
             Oleq designs, builds and operates the platforms that run insurance,
