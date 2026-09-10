@@ -38,7 +38,7 @@ function Services() {
   return (
     <div>
       <section className="page-hero">
-        <div className="container wrap relative text-center services-hero-animate">
+        <div className="container wrap relative mx-auto flex max-w-5xl flex-col items-center text-center services-hero-animate">
           <p className="section-kicker justify-center services-hero-item services-hero-kicker">What we do</p>
           <h1 className="page-title mx-auto max-w-4xl services-hero-item services-hero-title">
             We build the digital <span className="whitespace-nowrap">infrastructure</span> behind ambitious organisations.
