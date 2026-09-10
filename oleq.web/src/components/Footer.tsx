@@ -1,13 +1,15 @@
 import { Link } from '@tanstack/react-router'
+import { Mail, MessageCircle, Phone } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 
 const nav = [
   {
     section: 'Industries',
     items: [
-      { link: '/services#finance', name: 'Finance' },
-      { link: '/services#education', name: 'Education' },
-      { link: '/services#health', name: 'Health' },
+      { link: '/#industries', name: 'InsurTech' },
+      { link: '/#industries', name: 'EdTech' },
+      { link: '/#industries', name: 'PropTech' },
+      { link: '/#industries', name: 'Payments & FinTech' },
     ],
   },
   {
@@ -16,7 +18,7 @@ const nav = [
       { link: '/about', name: 'Who we are' },
       { link: '/projects', name: 'Our work' },
       { link: '/team', name: 'Our team' },
-      { link: '/contact', name: 'Request a quote' },
+      { link: '/#why-oleq', name: 'Why Oleq' },
     ],
   },
   {
@@ -24,13 +26,6 @@ const nav = [
     items: [
       { link: '/privacy', name: 'Privacy Policy' },
       { link: '/account/deletion', name: 'Delete your account' },
-    ],
-  },
-  {
-    section: 'Contact',
-    items: [
-      { link: '/contact', name: 'Start a conversation' },
-      { link: '/contact#quote-form', name: 'Request a quote' },
     ],
   },
 ]
@@ -71,14 +66,41 @@ export default function Footer() {
               </div>
             </div>
           ))}
+
+          <div className="space-y-2">
+            <h5>Contact</h5>
+            <div className="flex flex-col gap-3 text-sm">
+              <a
+                href="mailto:support@oleq.co"
+                className="inline-flex items-center gap-2 no-underline"
+              >
+                <Mail size={16} />
+                support@oleq.co
+              </a>
+              <a
+                href="tel:+254728872056"
+                className="inline-flex items-center gap-2 no-underline"
+              >
+                <Phone size={16} />
+                +254 728 872 056
+              </a>
+              <a
+                href="https://wa.me/254728872056"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 no-underline"
+              >
+                <MessageCircle size={16} />
+                WhatsApp — @oleq
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="flex items-center flex-col gap-4 border-t border-[var(--line)] py-2 text-xs text-[var(--sea-ink-soft)] md:flex-row justify-between">
           <div>© {new Date().getFullYear()} Oleq. All rights reserved.</div>
           <ThemeToggle />
-          <div className="mono font-mono">
-            BUILT &amp; OPERATED IN NAIROBI, KENYA
-          </div>
+          <div className="mono font-mono">BUILT &amp; OPERATED IN NAIROBI, KENYA</div>
         </div>
       </div>
     </footer>
