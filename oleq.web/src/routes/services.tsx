@@ -39,7 +39,7 @@ function Services() {
     <div>
       <section className="page-hero">
         <div className="container wrap relative text-center">
-          <p className="section-kicker">What we do</p>
+          <p className="section-kicker justify-center">What we do</p>
           <h1 className="page-title mx-auto max-w-4xl">
             We build the digital <span className="whitespace-nowrap">infrastructure</span> behind ambitious organisations.
           </h1>
