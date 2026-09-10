@@ -42,7 +42,7 @@ function Services() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
+        <div className="mx-auto max-w-305 px-5 sm:px-8">
           <p className="section-kicker">What we do</p>
           <h1 className="page-title max-w-3xl">
             The skills to build it. The care to keep it working.
@@ -57,7 +57,7 @@ function Services() {
         className="bg-white px-5 py-20 sm:px-8 sm:py-28 dark:bg-slate-950/80"
         id="delivery"
       >
-        <div className="mx-auto max-w-[1220px]">
+        <div className="mx-auto max-w-305">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {services.map(({ icon: Icon, title, copy }) => (
               <article
@@ -77,7 +77,7 @@ function Services() {
         </div>
       </section>
       <section className="bg-slate-100 py-20 sm:py-28 dark:bg-slate-900/60">
-        <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
+        <div className="mx-auto max-w-305 px-5 sm:px-8">
           <p className="section-kicker">Where we focus</p>
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
             {[
@@ -115,7 +115,7 @@ function Services() {
         </div>
       </section>
       <section className="bg-slate-50 px-5 py-20 text-center sm:px-8 sm:py-28 dark:bg-slate-950/70">
-        <div className="mx-auto max-w-[1220px]">
+        <div className="mx-auto max-w-305">
           <p className="section-kicker justify-center">
             Start with the right question
           </p>

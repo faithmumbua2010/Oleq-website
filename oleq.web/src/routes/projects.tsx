@@ -16,7 +16,7 @@ function Projects() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
+        <div className="mx-auto max-w-305 px-5 sm:px-8">
           <p className="section-kicker">Our work</p>
           <h1 className="page-title max-w-3xl">
             Projects shaped for the work behind the work.
@@ -27,7 +27,7 @@ function Projects() {
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-[1220px] px-5 py-16 sm:px-8 sm:py-20">
+      <section className="mx-auto max-w-305 px-5 py-16 sm:px-8 sm:py-20">
         <div
           className="flex flex-wrap gap-2"
           aria-label="Filter projects by sector"

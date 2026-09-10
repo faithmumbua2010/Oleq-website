@@ -1,25 +1,12 @@
 import {
   ArrowUpRight,
-  Building2,
-  GraduationCap,
-  HeartPulse,
-  Landmark,
-  ShieldCheck,
-  Trophy,
+ 
 } from 'lucide-react'
 import type { Project } from '#/data/projects'
 
-const icons = {
-  Finance: Landmark,
-  Education: GraduationCap,
-  Health: HeartPulse,
-  Insurance: ShieldCheck,
-  Sports: Trophy,
-  'Property Management': Building2,
-}
+
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const Icon = icons[project.tag]
 
   return (
     <article className="group overflow-hidden rounded-[1.35rem] border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-950/10">
@@ -47,14 +34,11 @@ export default function ProjectCard({ project }: { project: Project }) {
             </div>
           </div>
         )}
-        <div className="absolute inset-x-5 bottom-5 flex items-end justify-between">
-          <div className="rounded-xl border border-white/30 bg-slate-950/65 p-2.5 text-white backdrop-blur-sm">
-            <Icon size={23} strokeWidth={1.7} />
-          </div>
-          <span className="rounded-full bg-slate-950/70 px-3 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-sm">
-            {project.tag}
-          </span>
-        </div>
+       <div className="absolute inset-x-5 bottom-5 flex items-end justify-end">
+  <span className="rounded-full bg-slate-950/70 px-3 py-1.5 text-xs font-bold tracking-wide text-white backdrop-blur-sm">
+    {project.tag}
+  </span>
+</div>
       </div>
       <div className="p-6">
         <p className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-primary">

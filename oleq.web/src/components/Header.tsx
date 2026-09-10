@@ -8,11 +8,11 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false)
 
   return (
-    <header className="sticky inset-x-0 top-0 z-[100] border-b border-border bg-background/90 backdrop-blur-[14px]">
+    <header className="sticky inset-x-0 top-0 z-100 border-b border-border bg-background/90 backdrop-blur-[14px]">
       <nav className="container flex items-center justify-between px-5 py-4 sm:px-8">
         <Link
           to="/"
-          className="logo flex items-center gap-[9px] font-['Poppins'] font-bold text-[21px] tracking-[-0.02em]"
+          className="logo flex items-center gap-2.25 font-['Poppins'] font-bold text-[21px] tracking-[-0.02em]"
         >
           <img
             src="/oleq-logo.png"
@@ -66,26 +66,18 @@ export default function Header() {
             Request a quote
           </Link>
         </div>
-        <div className="flex items-center gap-2 lg:hidden">
-          <Link
-            to="/contact"
-            className="rounded-full bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground no-underline"
-          >
-            Get a quote
-          </Link>
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen((open) => !open)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground"
-            aria-label={
-              isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
-            }
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-navigation"
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
+        <button
+  type="button"
+  onClick={() => setIsMenuOpen((open) => !open)}
+  className="grid h-10 w-10 place-items-center rounded-full border border-border text-foreground lg:hidden"
+  aria-label={
+    isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+  }
+  aria-expanded={isMenuOpen}
+  aria-controls="mobile-navigation"
+>
+  {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+</button>
       </nav>
 
       {isMenuOpen ? (

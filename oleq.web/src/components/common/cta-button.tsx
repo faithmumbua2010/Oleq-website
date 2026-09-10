@@ -9,7 +9,7 @@ export default function CtaButton({ href, name }: Props) {
   return (
     <Link
       to={href}
-      className="btn inline-flex items-center gap-2.5 px-[26px] py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-primary bg-gradient-to-r from-primary to-accent text-primary-foreground hover:-translate-y-0.5 hover:from-accent hover:to-primary"
+      className="btn inline-flex items-center gap-2.5 px-6.5 py-3.5 rounded-full font-['Poppins'] font-semibold text-[15px] cursor-pointer border border-transparent transition-all duration-300 whitespace-nowrap btn-primary bg-linear-to-r from-primary to-accent text-primary-foreground hover:-translate-y-0.5 hover:from-accent hover:to-primary"
     >
       {name}
 

@@ -48,7 +48,7 @@ function Team() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
+        <div className="mx-auto max-w-305 px-5 sm:px-8">
           <p className="section-kicker">Our team</p>
           <h1 className="page-title max-w-3xl">The people behind Oleq.</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
@@ -59,7 +59,7 @@ function Team() {
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-[1220px] px-5 pt-8 sm:px-8 sm:py-28 sm:pt-10">
+      <section className="mx-auto max-w-305 px-5 pb-20 pt-8 sm:px-8 sm:py-28 sm:pt-10">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map(({ name, role, detail }) => (
             <article

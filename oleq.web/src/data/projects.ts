@@ -1,5 +1,5 @@
 export type ProjectTag =
-  'Finance' | 'Health' | 'Insurance' | 'Sports' | 'Property Management'
+  'Finance' | 'Health' | 'Insurance' | 'Sports' | 'Property Management' | 'Operations'
 export type Project = {
   name: string
   tag: ProjectTag
@@ -34,9 +34,9 @@ export const projects: Project[] = [
     url: 'https://qlex.ke/',
     image: 'https://qlex.ke/hero.png',
     imageAlt: 'Qlex property management dashboard',
-    type: 'Business finance platform',
+    type: 'Property management platform',
     description:
-      'Connected tools for organisations that need dependable workflows, better visibility and room to grow.',
+     'Connected tools for landlords and agencies that need dependable rent collection, tenant records and clear reporting.',
     impact: 'Designed for confident decisions',
     color: 'from-cyan-500 via-sky-600 to-blue-700',
   },
@@ -54,12 +54,12 @@ export const projects: Project[] = [
   },
   {
     name: 'Kavayu',
-    tag: 'Finance',
+    tag: 'Insurance',
     url: 'https://kavayu.com/',
     type: 'Financial operations platform',
     description:
-      'Practical digital infrastructure for financial workflows that need to stay reliable as they scale.',
-    impact: 'Reliable operations, built to scale',
+    'A membership-based support network that helps families cover last-expense costs and navigate loss with less financial strain.',  
+    impact: '30K+ members supported',
     color: 'from-emerald-500 via-teal-500 to-cyan-600',
   },
   {
@@ -69,9 +69,9 @@ export const projects: Project[] = [
     image:
       'https://qundi.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffeatures.71090b3b.png&w=1200&q=80',
     imageAlt: 'Qundi financial management features',
-    type: 'Finance platform',
+    type: 'Digital SACCO & group loans platform',
     description:
-      'A streamlined system for making financial services easier to access, manage and understand.',
+    'Savings and group lending built for riders, chamas and informal groups, with flexible repayment terms.',  
     impact: 'Made for low-friction finance',
     color: 'from-violet-500 via-indigo-600 to-blue-700',
   },
@@ -84,8 +84,8 @@ export const projects: Project[] = [
     imageAlt: 'Mama Bima insurance plan',
     type: 'Insurance and health platform',
     description:
-      'A connected digital layer helping people access insurance and health services with less friction.',
-    impact: 'Built around better access to care',
+    'A digital layer that helps families and businesses compare and access life, medical, car and travel cover in one place.',  
+    impact: '5,000+ families and businesses served',
     color: 'from-blue-600 via-sky-500 to-cyan-400',
   },
   {
@@ -99,15 +99,15 @@ export const projects: Project[] = [
   },
   {
     name: 'Expendo',
-    tag: 'Health',
+    tag: 'Finance', 
     url: 'https://expendo.co/',
     image:
       'https://expendo.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9356586f.png&w=640&q=80',
     imageAlt: 'Expendo logo',
-    type: 'Care coordination platform',
+    type: 'Mobility fintech & insurance platform',
     description:
-      'A digital layer for patient journeys, clinic operations and clearer health-service communication.',
-    impact: 'Connected care, from visit to follow-up',
+     'Affordable financing, accident and funeral cover for boda boda riders and informal workers, paid in small daily instalments.', 
+    impact: 'Built for Africa\u2019s informal economy',
     color: 'from-violet-500 via-fuchsia-500 to-indigo-700',
   },
   {
@@ -116,9 +116,9 @@ export const projects: Project[] = [
     url: 'https://qazeeni.com/',
     image: 'https://qazeeni.com/_next/static/media/dashboard.0raronszuj.5k.svg',
     imageAlt: 'Qazeeni attendance dashboard',
-    type: 'Financial services platform',
+    type: 'Workforce attendance platform',
     description:
-      'A clear and connected way to support financial workflows, decisions and customer experiences.',
+      'Real-time attendance and workforce management with GPS check-ins, biometric clock-in and leave tracking for teams on the ground.',
     impact: 'More clarity across the workflow',
     color: 'from-fuchsia-500 via-violet-600 to-indigo-700',
   },
@@ -140,4 +140,5 @@ export const projectTags: Array<'All' | ProjectTag> = [
   'Insurance',
   'Sports',
   'Property Management',
+  'Operations',
 ]

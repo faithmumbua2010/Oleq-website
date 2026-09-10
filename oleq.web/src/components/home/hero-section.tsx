@@ -122,18 +122,18 @@ function NetworkMap() {
 
 export default function HeroSection() {
   return (
-    <section className="hero relative overflow-hidden pb-[100px] pt-[120px] max-[680px]:pb-[70px] max-[680px]:pt-[90px]">
-      <div className="wrap relative mx-auto grid max-w-[1220px] grid-cols-[1.05fr_.95fr] items-center gap-16 px-8 max-[960px]:grid-cols-1 max-[960px]:gap-14 max-[680px]:px-5">
+    <section className="hero relative overflow-hidden pb-25 pt-30 max-[680px]:pb-17.5 max-[680px]:pt-22.5">
+      <div className="wrap relative mx-auto grid max-w-305 grid-cols-[1.05fr_.95fr] items-center gap-16 px-8 max-[960px]:grid-cols-1 max-[960px]:gap-14 max-[680px]:px-5">
         <div>
-          <div className="eyebrow mb-[18px] flex items-center gap-2.5 font-mono text-[12.5px] uppercase tracking-[0.14em] text-primary">
-            <span className="h-px w-[18px] shrink-0 bg-primary"></span>
+          <div className="eyebrow mb-4.5 flex items-center gap-2.5 font-mono text-[12.5px] uppercase tracking-[0.14em] text-primary">
+            <span className="h-px w-4.5 shrink-0 bg-primary"></span>
             Digital infrastructure — built &amp; operated in Africa
           </div>
           <h1 className="mb-6 font-[Poppins,sans-serif] text-[clamp(38px,4.6vw,62px)] font-semibold leading-[1.08] tracking-[-0.01em]">
             Building intelligent digital infrastructure
             <span className="accent block text-primary">for Africa.</span>
           </h1>
-          <p className="hero-sub mb-[38px] max-w-[480px] text-[18px] text-muted-foreground">
+          <p className="hero-sub mb-9.5 max-w-120 text-[18px] text-muted-foreground">
             Oleq designs, builds and operates the platforms that run insurance,
             education, property and payments — combining engineering, AI and
             data into systems that hold up at national scale.
@@ -143,12 +143,12 @@ export default function HeroSection() {
 
             <Link
               to="/services"
-              className="btn inline-flex items-center gap-2.5 rounded-full border border-border border-transparent px-[26px] py-3.5 font-['Poppins'] text-[15px] font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-muted-foreground"
+              className="btn inline-flex items-center gap-2.5 rounded-full border border-transparent px-6.5 py-3.5 font-['Poppins'] text-[15px] font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-muted-foreground"
             >
               Explore our solutions
             </Link>
           </div>
-          <div className="hero-stats grid grid-cols-4 gap-9 border-t border-border pt-[26px] max-[680px]:grid-cols-2 max-[680px]:gap-6">
+          <div className="hero-stats grid grid-cols-4 gap-9 border-t border-border pt-6.5 max-[680px]:grid-cols-2 max-[680px]:gap-6">
             <div className="hero-stat flex flex-col gap-1.5">
               <b className="font-[Poppins,sans-serif] text-[clamp(18px,1.8vw,26px)] font-semibold text-foreground">
                 500K+
@@ -185,7 +185,7 @@ export default function HeroSection() {
         </div>
 
         <div className="map-wrap relative">
-          <div className="map-card rounded-[20px] border border-border bg-card p-[22px] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
+          <div className="map-card rounded-[20px] border border-border bg-card p-5.5 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
             <div className="map-card-head mb-1.5 flex items-center justify-between px-1">
               <span className="mono font-mono">PAYMENT NETWORK — LIVE</span>
               <span className="live-tag flex items-center gap-1.5 font-mono text-[11.5px] text-accent">

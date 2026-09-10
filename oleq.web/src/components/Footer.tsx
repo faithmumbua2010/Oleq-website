@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link
               to="/"
-              className="logo flex items-center gap-[9px] font-['Poppins'] font-bold text-[21px] tracking-[-0.02em]"
+              className="logo flex items-center gap-2.25 font-['Poppins'] font-bold text-[21px] tracking-[-0.02em]"
             >
               <img
                 src="/oleq-logo.png"
