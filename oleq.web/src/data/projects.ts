@@ -27,19 +27,7 @@ export const projects: Project[] = [
     impact: '500K+ memberships managed',
     color: 'from-sky-500 via-blue-500 to-indigo-700',
   },
-  {
-    name: 'Silqu',
-    tag: 'Property Management',
-    url: 'https://silqu.com/',
-    image:
-      'https://silqu.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsilqu-property-management-dashboard-kenya.9afe6cba.png&w=1200&q=80',
-    imageAlt: 'Silqu property management dashboard',
-    type: 'Financial services platform',
-    description:
-      'A focused digital experience that helps teams manage financial work with greater clarity and control.',
-    impact: 'Built for simpler financial operations',
-    color: 'from-indigo-500 via-blue-600 to-sky-500',
-  },
+ 
   {
     name: 'Qlex',
     tag: 'Property Management',
@@ -134,20 +122,7 @@ export const projects: Project[] = [
     impact: 'More clarity across the workflow',
     color: 'from-fuchsia-500 via-violet-600 to-indigo-700',
   },
-  {
-    name: 'Mula',
-    tag: 'Sports',
-    url: 'https://www.mulasport.com/',
-    image: 'https://www.mulasport.com/assets/logo-HhW8FIKo.png',
-    imageAlt: 'Mula Sport eagle logo',
-    imageFit: 'contain',
-    imageScale: 'zoom-out',
-    type: 'Sports platform',
-    description:
-      'A digital experience built to connect sporting activity, participation and community in one place.',
-    impact: 'Made for movement and participation',
-    color: 'from-lime-500 via-emerald-500 to-green-700',
-  },
+ 
   {
     name: 'Buza App',
     tag: 'Sports',

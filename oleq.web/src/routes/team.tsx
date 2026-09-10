@@ -1,54 +1,48 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import {
-  ArrowRight,
-  Code2,
-  Handshake,
-  Layers3,
-  LineChart,
-  Palette,
-  ShieldCheck,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export const Route = createFileRoute('/team')({ component: Team })
 
 const team = [
   {
-    icon: Layers3,
-    role: 'Leadership & strategy',
+    name: 'Ronald Mutuku',
+    role: 'CEO',
     detail:
-      'Sets direction, builds strong partnerships and keeps delivery connected to the real goal.',
+      'Sets the direction for Oleq and keeps every engagement tied to real client outcomes.',
   },
   {
-    icon: Code2,
-    role: 'Engineering',
+    name: 'Oliver Sagala',
+    role: 'Senior Developer',
     detail:
-      'Platform, integration and infrastructure specialists who make the hard parts dependable.',
+      'Leads architecture and the trickier engineering problems across the platform.',
   },
   {
-    icon: Palette,
-    role: 'Product & design',
-    detail:
-      'Researchers, product thinkers and designers who make complexity feel clear and useful.',
+    name: 'Antony',
+    role: 'App Developer',
+    detail: 'Builds and maintains the mobile and application layer end to end.',
   },
   {
-    icon: LineChart,
-    role: 'Data & intelligence',
+    name: 'Bilha',
+    role: 'Frontend Developer',
     detail:
-      'Analysts and automation specialists turning operational data into next-step insight.',
+      'Shapes the interfaces clients and users actually touch — clean and responsive.',
   },
   {
-    icon: ShieldCheck,
-    role: 'Delivery & operations',
+    name: 'Fred',
+    role: 'Project Manager',
     detail:
-      'Hands-on operators who help teams launch confidently and improve continuously.',
-  },
-  {
-    icon: Handshake,
-    role: 'Partnerships & client success',
-    detail:
-      'People who stay close to partner teams, needs and the work still ahead.',
+      'Keeps timelines honest and communication clear across every project.',
   },
 ]
+
+function initials(name: string) {
+  return name
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase()
+}
 
 function Team() {
   return (
@@ -56,38 +50,34 @@ function Team() {
       <section className="page-hero">
         <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
           <p className="section-kicker">Our team</p>
-          <h1 className="page-title max-w-3xl">
-            Different disciplines. One shared standard for useful work.
-          </h1>
+          <h1 className="page-title max-w-3xl">The people behind Oleq.</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-            Oleq is powered by a wider team than a single technical lead: the
-            people who define the opportunity, shape the experience, build the
-            platform and help it keep getting better.
+            A hands-on team spanning leadership, engineering, product and
+            delivery — each person carrying real ownership, not just a job
+            title, so the work stays accountable from the first idea to what
+            ships.
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-[1220px] px-5 py-20 sm:px-8 sm:py-28">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {team.map(({ icon: Icon, role, detail }, index) => (
+      <section className="mx-auto max-w-[1220px] px-5 pt-8 sm:px-8 sm:py-28 sm:pt-10">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {team.map(({ name, role, detail }) => (
             <article
-              key={role}
-              className="group relative overflow-hidden rounded-[1.4rem] border border-border bg-card p-7 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-sky-950/10"
+              key={name}
+              className="overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-950/10"
             >
-              <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-primary/10 transition group-hover:scale-125" />
-              <div className="relative flex items-start justify-between">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
-                  <Icon size={24} />
-                </span>
-                <span className="font-mono text-xs text-muted-foreground">
-                  0{index + 1}
-                </span>
+              <div className="grid aspect-square place-items-center bg-[linear-gradient(160deg,#0b1f35_0%,#0369a1_120%)] text-3xl font-bold text-white">
+                {initials(name)}
               </div>
-              <h2 className="relative mt-14 font-[Poppins,sans-serif] text-2xl font-semibold">
-                {role}
-              </h2>
-              <p className="relative mt-3 leading-7 text-muted-foreground">
-                {detail}
-              </p>
+              <div className="p-5">
+                <h2 className="font-[Poppins,sans-serif] text-base font-bold">
+                  {name}
+                </h2>
+                <p className="mt-0.5 text-sm font-bold text-primary">{role}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {detail}
+                </p>
+              </div>
             </article>
           ))}
         </div>

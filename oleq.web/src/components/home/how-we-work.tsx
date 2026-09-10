@@ -46,7 +46,8 @@ export default function HowWeWork() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-kicker">How we work</p>
           <h2 className="section-title mt-3">
-            A hands-on technology partner, from problem to progress.
+            A technology company, not a software shop.
+
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
             We bring product, engineering, data and operational thinking
