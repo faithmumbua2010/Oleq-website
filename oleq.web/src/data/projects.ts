@@ -29,18 +29,6 @@ export const projects: Project[] = [
   },
  
   {
-    name: 'Qlex',
-    tag: 'Property Management',
-    url: 'https://qlex.ke/',
-    image: 'https://qlex.ke/hero.png',
-    imageAlt: 'Qlex property management dashboard',
-    type: 'Property management platform',
-    description:
-     'Connected tools for landlords and agencies that need dependable rent collection, tenant records and clear reporting.',
-    impact: 'Designed for confident decisions',
-    color: 'from-cyan-500 via-sky-600 to-blue-700',
-  },
-  {
     name: 'iResidence',
     tag: 'Property Management',
     url: 'https://iresidence.co/',
@@ -52,6 +40,20 @@ export const projects: Project[] = [
     impact: 'Clearer management from one place',
     color: 'from-amber-500 via-orange-500 to-rose-600',
   },
+
+   {
+  name: 'Silqu',
+  tag: 'Property Management',
+  url: 'https://silqu.com/',
+  image:
+    'https://silqu.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsilqu-property-management-dashboard-kenya.9afe6cba.png&w=1200&q=80',
+  imageAlt: 'Silqu property management dashboard',
+  type: 'Property management platform',
+  description:
+    'An award-winning system for landlords and property managers, with automated rent reconciliation and disbursement.',
+  impact: 'Built for simpler, automated operations',
+  color: 'from-indigo-500 via-blue-600 to-sky-500',
+},
   {
     name: 'Kavayu',
     tag: 'Insurance',
@@ -123,15 +125,7 @@ export const projects: Project[] = [
     color: 'from-fuchsia-500 via-violet-600 to-indigo-700',
   },
  
-  {
-    name: 'Buza App',
-    tag: 'Sports',
-    type: 'Sports community app',
-    description:
-      'A mobile-first platform helping sports communities stay connected, active and informed.',
-    impact: 'Bringing the game closer to people',
-    color: 'from-rose-500 via-orange-500 to-amber-600',
-  },
+
 ]
 
 export const projectTags: Array<'All' | ProjectTag> = [
