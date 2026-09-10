@@ -36,13 +36,19 @@ function Home() {
     <div id="top">
       <HeroSection />
 
-      <section className="bg-slate-950/95 py-8 text-white">
-        <div className="mx-auto flex max-w-305 flex-wrap items-center justify-center gap-x-10 gap-y-3 px-5 text-center text-xs font-bold uppercase tracking-[.14em] text-slate-200 sm:px-8">
-          <span>Digital product strategy</span>
-          <span className="hidden h-1 w-1 rounded-full bg-sky-400 sm:block" />
-          <span>Engineering &amp; integration</span>
-          <span className="hidden h-1 w-1 rounded-full bg-sky-400 sm:block" />
-          <span>Operations &amp; support</span>
+      <section className="overflow-hidden border-y border-border bg-background py-5 text-foreground">
+        <div className="relative flex w-max animate-[marquee_24s_linear_infinite] items-center gap-8 whitespace-nowrap text-xs font-bold uppercase tracking-[.14em] sm:gap-12">
+          {[...Array(2)].flatMap(() => [
+            'Digital product strategy',
+            'Engineering & integration',
+            'Operations & support',
+            'Built for real work',
+          ]).map((item, index) => (
+            <span key={`${item}-${index}`} className="flex items-center gap-8 sm:gap-12">
+              <span>{item}</span>
+              <span className="h-1 w-1 rounded-full bg-primary" />
+            </span>
+          ))}
         </div>
       </section>
 
