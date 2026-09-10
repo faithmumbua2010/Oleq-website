@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { ArrowRight, BadgeCheck, Building2, GraduationCap, Home, ShieldCheck } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Building2, GraduationCap, House, ShieldCheck } from 'lucide-react'
 import ProjectCard from '#/components/ProjectCard'
 import HeroSection from '#/components/home/hero-section'
 import HowWeWork from '#/components/home/how-we-work'
@@ -25,7 +25,7 @@ const industries = [
     tags: 'USSD · SMS · AI Tutoring · Analytics',
   },
   {
-    icon: Home,
+    icon: House,
     number: '03',
     name: 'PropTech',
     title: 'Property operations, financially reconciled',
