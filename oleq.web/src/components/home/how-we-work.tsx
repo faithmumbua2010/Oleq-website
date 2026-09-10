@@ -29,7 +29,7 @@ export default function HowWeWork() {
   return (
     <section
       id="why-oleq"
-      className="bg-background px-5 py-20 sm:px-8 sm:py-28"
+      className="bg-slate-100 px-5 py-20 sm:px-8 sm:py-28 dark:bg-slate-900/80"
     >
       <div className="mx-auto max-w-305">
         <div className="max-w-4xl">
