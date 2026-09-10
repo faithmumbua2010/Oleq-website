@@ -122,8 +122,8 @@ function NetworkMap() {
 
 export default function HeroSection() {
   return (
-    <section className="hero relative overflow-hidden pb-25 pt-30 max-[680px]:pb-17.5 max-[680px]:pt-22.5">
-      <div className="wrap relative mx-auto grid max-w-305 grid-cols-[1.05fr_.95fr] items-center gap-16 px-8 max-[960px]:grid-cols-1 max-[960px]:gap-14 max-[680px]:px-5">
+    <section className="hero relative overflow-hidden">
+      <div className="container wrap relative grid grid-cols-[1.05fr_.95fr] items-center gap-16 max-[960px]:grid-cols-1">
         <div>
           <div className="eyebrow mb-4.5 flex items-center gap-2.5 font-mono text-[12.5px] uppercase tracking-[0.14em] text-primary">
             <span className="h-px w-4.5 shrink-0 bg-primary"></span>
@@ -131,7 +131,7 @@ export default function HeroSection() {
           </div>
           <h1 className="mb-6 font-[Poppins,sans-serif] text-[clamp(38px,4.6vw,62px)] font-semibold leading-[1.08] tracking-[-0.01em]">
             Building intelligent digital infrastructure
-            <span className="accent block text-primary">for Africa.</span>
+            <span className="mt-2 block text-primary">for Africa.</span>
           </h1>
           <p className="hero-sub mb-9.5 max-w-120 text-[18px] text-muted-foreground">
             Oleq designs, builds and operates the platforms that run insurance,
@@ -184,7 +184,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="map-wrap relative">
+        <div className="map-wrap relative max-w-xl">
           <div className="map-card rounded-[20px] border border-border bg-card p-5.5 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
             <div className="map-card-head mb-1.5 flex items-center justify-between px-1">
               <span className="mono font-mono">PAYMENT NETWORK — LIVE</span>
