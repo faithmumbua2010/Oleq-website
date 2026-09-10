@@ -13,10 +13,12 @@ function Projects() {
   return (
     <div>
       <section className="page-hero">
-        <div className="container wrap relative">
-          <p className="section-kicker">Our work</p>
-          <h1 className="page-title max-w-3xl">Projects shaped for the work behind the work.</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+        <div className="container wrap relative text-center">
+          <p className="section-kicker justify-center">Our work</p>
+          <h1 className="page-title mx-auto max-w-4xl font-[Poppins,sans-serif] text-[clamp(38px,4.6vw,62px)] font-semibold leading-[1.08] tracking-[-0.01em]">
+            Projects shaped for the work behind the work.
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-[18px] leading-8 text-muted-foreground">
             A selection of products and platforms across finance, education and health—built to be clear, resilient and genuinely useful.
           </p>
         </div>
