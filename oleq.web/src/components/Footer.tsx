@@ -59,7 +59,7 @@ export default function Footer() {
               <h5>{section}</h5>
               <div className="flex flex-col gap-1">
                 {items.map(({ name, link }) => (
-                  <Link to={link} key={link}>
+                  <Link to={link} key={`${section}-${name}`}>
                     {name}
                   </Link>
                 ))}
