@@ -91,7 +91,7 @@ function Services() {
         <div className="mx-auto max-w-305 px-5 sm:px-8">
           <p className="section-kicker">What we do</p>
           <h1 className="page-title max-w-4xl">
-            We build the digital infrastructure behind ambitious organisations.
+            We build the digital <span className="whitespace-nowrap">infrastructure</span> behind ambitious organisations.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground sm:text-xl">
             Strategy is only useful when it becomes something people can use.
@@ -130,11 +130,11 @@ function Services() {
               focus.
             </p>
           </div>
-          <div className="rounded-3xl bg-slate-950 p-7 text-white sm:p-10 dark:bg-slate-900">
-            <p className="text-sm font-bold uppercase tracking-[.14em] text-sky-300">
+          <div className="rounded-3xl border border-border bg-card p-7 text-foreground shadow-xl shadow-foreground/5 sm:p-10">
+            <p className="text-sm font-bold uppercase tracking-[.14em] text-primary">
               Our approach
             </p>
-            <p className="mt-5 text-xl font-medium leading-8 sm:text-2xl">
+            <p className="mt-5 text-xl font-medium leading-8 text-foreground sm:text-2xl">
               Understand the problem → design the system → build the product →
               connect the ecosystem → keep improving it.
             </p>
