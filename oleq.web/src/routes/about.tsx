@@ -59,7 +59,7 @@ function About() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-border bg-muted/40 px-5 py-20 sm:px-8 sm:py-24 dark:bg-muted/10">
+      <section className="relative overflow-hidden bg-muted/40 px-5 py-20 sm:px-8 sm:py-24 dark:bg-muted/10">
         <div className="pointer-events-none absolute inset-0 opacity-50 [background-image:linear-gradient(to_right,hsl(var(--border)/.35)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/.35)_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-20 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
