@@ -1,9 +1,18 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { ArrowRight, BadgeCheck, Building2, GraduationCap, House, ShieldCheck } from 'lucide-react'
+import {
+  ArrowRight,
+  BadgeCheck,
+  Building2,
+  GraduationCap,
+  House,
+  ShieldCheck,
+} from 'lucide-react'
 import ProjectCard from '#/components/ProjectCard'
 import HeroSection from '#/components/home/hero-section'
 import HowWeWork from '#/components/home/how-we-work'
 import { projects } from '#/data/projects'
+import HeroStripSection from '#/components/home/hero-strip-section'
+import HeroStripSection2 from '#/components/home/hero-strip-section2'
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -70,58 +79,55 @@ function Home() {
   return (
     <div id="top">
       <HeroSection />
-
-      <section className="overflow-hidden bg-background py-5 text-foreground">
-        <div className="relative flex w-max animate-[marquee_24s_linear_infinite] items-center gap-8 whitespace-nowrap text-xs font-bold uppercase tracking-[.14em] sm:gap-12">
-          {[...Array(2)].flatMap(() => [
-            'Digital product strategy',
-            'Engineering & integration',
-            'Operations & support',
-            'Built for real work',
-          ]).map((item, index) => (
-            <span key={`${item}-${index}`} className="flex items-center gap-8 sm:gap-12">
-              <span>{item}</span>
-              <span className="h-1 w-1 rounded-full bg-primary" />
-            </span>
-          ))}
-        </div>
-      </section>
-
+      <HeroStripSection />
+      <HeroStripSection2 />
       <HowWeWork />
 
-      <section id="industries" className="bg-background px-5 py-20 sm:px-8 sm:py-28">
+      <section
+        id="industries"
+        className="bg-background px-5 py-20 sm:px-8 sm:py-28"
+      >
         <div className="mx-auto max-w-305">
           <div className="mx-auto max-w-3xl text-center">
             <p className="section-kicker">Industries</p>
-            <h2 className="section-title mt-3">Four industries. One engineering standard.</h2>
+            <h2 className="section-title mt-3">
+              Four industries. One engineering standard.
+            </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
-              We build around the regulatory, operational and scale demands of the
-              industries we know best — with the same engineering discipline underneath.
+              We build around the regulatory, operational and scale demands of
+              the industries we know best — with the same engineering discipline
+              underneath.
             </p>
           </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {industries.map(({ icon: Icon, number, name, title, copy, tags }) => (
-              <article
-                key={name}
-                className="group rounded-3xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl sm:p-9"
-              >
-                <div className="flex items-start justify-between gap-5">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
-                    <Icon size={24} />
-                  </span>
-                  <span className="font-mono text-xs font-bold text-muted-foreground">{number}</span>
-                </div>
-                <p className="mt-7 text-sm font-bold uppercase tracking-[.12em] text-primary">{name}</p>
-                <h3 className="mt-3 font-[Poppins,sans-serif] text-2xl font-semibold leading-tight sm:text-3xl">
-                  {title}
-                </h3>
-                <p className="mt-4 leading-7 text-muted-foreground">{copy}</p>
-                <p className="mt-7 border-t border-border pt-5 text-xs font-bold uppercase tracking-[.1em] text-muted-foreground">
-                  {tags}
-                </p>
-              </article>
-            ))}
+            {industries.map(
+              ({ icon: Icon, number, name, title, copy, tags }) => (
+                <article
+                  key={name}
+                  className="group rounded-3xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl sm:p-9"
+                >
+                  <div className="flex items-start justify-between gap-5">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary">
+                      <Icon size={24} />
+                    </span>
+                    <span className="font-mono text-xs font-bold text-muted-foreground">
+                      {number}
+                    </span>
+                  </div>
+                  <p className="mt-7 text-sm font-bold uppercase tracking-[.12em] text-primary">
+                    {name}
+                  </p>
+                  <h3 className="mt-3 font-[Poppins,sans-serif] text-2xl font-semibold leading-tight sm:text-3xl">
+                    {title}
+                  </h3>
+                  <p className="mt-4 leading-7 text-muted-foreground">{copy}</p>
+                  <p className="mt-7 border-t border-border pt-5 text-xs font-bold uppercase tracking-[.1em] text-muted-foreground">
+                    {tags}
+                  </p>
+                </article>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -130,7 +136,9 @@ function Home() {
         <div className="mx-auto max-w-305 sm:px-8">
           <div className="flex flex-col gap-6 sm:items-end">
             <div className="mx-auto w-full max-w-2xl text-center">
-              <h2 className="section-title">Projects, built around real work.</h2>
+              <h2 className="section-title">
+                Projects, built around real work.
+              </h2>
               <p className="mt-5 leading-7 text-muted-foreground">
                 Explore a sample of the digital products and operating platforms
                 Oleq has helped bring to life.
@@ -157,7 +165,9 @@ function Home() {
         <div className="mx-auto grid max-w-305 gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
           <div className="text-center">
             <p className="section-kicker">Client perspective</p>
-            <h2 className="section-title">Built to earn the trust of the teams who use it.</h2>
+            <h2 className="section-title">
+              Built to earn the trust of the teams who use it.
+            </h2>
             <p className="mx-auto mt-5 max-w-md leading-7 text-muted-foreground">
               The best technology makes complex work feel more certain,
               connected and human.
@@ -185,7 +195,9 @@ function Home() {
                     </span>
                     <div>
                       <p className="font-bold">{testimonial.name}</p>
-                      <p className="mt-1 leading-5 text-muted-foreground">{testimonial.role}</p>
+                      <p className="mt-1 leading-5 text-muted-foreground">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                 </figcaption>
@@ -202,11 +214,13 @@ function Home() {
               <BadgeCheck size={19} /> Clear next steps, no obligation
             </div>
             <h2 className="font-[Poppins,sans-serif] text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
-              Have a complex business problem? Let&apos;s build the technology to solve it.
+              Have a complex business problem? Let&apos;s build the technology
+              to solve it.
             </h2>
             <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-300">
-              Tell us what you need, where you are now and when you need to move.
-              We&apos;ll come back with useful questions and a practical next step.
+              Tell us what you need, where you are now and when you need to
+              move. We&apos;ll come back with useful questions and a practical
+              next step.
             </p>
             <Link
               to="/contact"

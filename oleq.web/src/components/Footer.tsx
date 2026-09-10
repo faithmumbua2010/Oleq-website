@@ -32,7 +32,7 @@ const nav = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--line)] bg-[var(--surface-strong)] text-[var(--sea-ink)]">
+    <footer className="border-t border-(--line) bg-(--surface-strong) text-(--sea-ink)">
       <div className="container px-8">
         <div className="grid grid-cols-[1.2fr_repeat(4,.85fr)] gap-9 py-4 pb-14 max-[960px]:grid-cols-2 max-[680px]:grid-cols-1">
           <div className="footer-brand">
