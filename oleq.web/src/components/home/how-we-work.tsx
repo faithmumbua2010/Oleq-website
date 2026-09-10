@@ -52,9 +52,7 @@ export default function HowWeWork() {
       <div className="mx-auto max-w-305">
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-kicker">Why Oleq</p>
-          <h2 className="section-title mt-3">
-            Why enterprises choose Oleq.
-          </h2>
+          <h2 className="section-title mt-3">Why enterprises choose Oleq.</h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
             We do more than build software. We bring proven production experience,
             African market knowledge and the engineering depth to take complex
@@ -71,13 +69,13 @@ export default function HowWeWork() {
                 people see on the screen. That is where our experience shows.
               </p>
               <div className="mt-8 flex flex-wrap gap-2 font-mono text-xs font-bold uppercase tracking-[.12em]">
-                <span className="rounded-full bg-sky-100 px-3 py-2 text-sky-700 dark:bg-sky-400/15 dark:text-sky-300">
+                <span className="rounded-full bg-primary/10 px-3 py-2 text-primary">
                   Scale
                 </span>
-                <span className="rounded-full bg-sky-100 px-3 py-2 text-sky-700 dark:bg-sky-400/15 dark:text-sky-300">
+                <span className="rounded-full bg-primary/10 px-3 py-2 text-primary">
                   Africa
                 </span>
-                <span className="rounded-full bg-sky-100 px-3 py-2 text-sky-700 dark:bg-sky-400/15 dark:text-sky-300">
+                <span className="rounded-full bg-primary/10 px-3 py-2 text-primary">
                   Reliability
                 </span>
               </div>
@@ -96,10 +94,10 @@ export default function HowWeWork() {
                       key={reason.title}
                       type="button"
                       onClick={() => setActive(index)}
-                      className={`absolute left-0 right-0 mx-auto flex min-h-52 max-w-xl items-start gap-5 rounded-2xl border bg-slate-950 px-5 pb-10 pt-8 text-left text-white shadow-xl shadow-slate-950/20 transition-all duration-500 ease-out sm:min-h-64 sm:px-8 ${
+                      className={`absolute left-0 right-0 mx-auto flex min-h-52 max-w-xl items-start gap-5 rounded-2xl border bg-card px-5 pb-10 pt-8 text-left text-foreground shadow-xl shadow-foreground/5 transition-all duration-500 ease-out sm:min-h-64 sm:px-8 ${
                         isActive
-                          ? 'z-20 border-sky-300/50 shadow-2xl shadow-sky-950/20'
-                          : 'border-white/15 hover:border-sky-300/40'
+                          ? 'z-20 border-primary/50 shadow-2xl shadow-primary/10'
+                          : 'border-border hover:border-primary/40'
                       }`}
                       style={{
                         top: `${(reasons.length - 1 - distance) * 52}px`,
@@ -109,17 +107,17 @@ export default function HowWeWork() {
                       }}
                       aria-pressed={isActive}
                     >
-                      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-sky-300/10 text-sky-300 sm:h-14 sm:w-14">
+                      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary sm:h-14 sm:w-14">
                         <CardIcon size={24} />
                       </span>
                       <span className="min-w-0">
-                        <span className="block font-mono text-xs font-bold text-slate-400">
+                        <span className="block font-mono text-xs font-bold text-muted-foreground">
                           0{index + 1}
                         </span>
                         <span className="block font-[Poppins,sans-serif] text-lg font-semibold sm:text-xl">
                           {reason.title}
                         </span>
-                        <span className="mt-1 block text-sm leading-6 text-slate-300">
+                        <span className="mt-1 block text-sm leading-6 text-muted-foreground">
                           {reason.copy}
                         </span>
                       </span>
