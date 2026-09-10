@@ -40,10 +40,10 @@ function Services() {
       <section className="page-hero">
         <div className="container wrap relative text-center services-hero-animate">
           <p className="section-kicker justify-center services-hero-item services-hero-kicker">What we do</p>
-          <h1 className="page-title mx-auto max-w-4xl services-hero-item services-hero-title">
+          <h1 className="mx-auto max-w-4xl font-[Poppins,sans-serif] text-[clamp(38px,4.6vw,62px)] font-semibold leading-[1.08] tracking-[-0.01em] services-hero-item services-hero-title">
             We build the digital <span className="whitespace-nowrap">infrastructure</span> behind ambitious organisations.
           </h1>
-          <p className="hero-sub mx-auto mt-6 max-w-3xl services-hero-item services-hero-copy">
+          <p className="hero-sub mx-auto mt-6 max-w-3xl text-[18px] text-muted-foreground services-hero-item services-hero-copy">
             Strategy is only useful when it becomes something people can use. Oleq brings product thinking, engineering, payments, AI and ongoing operations together to turn complex business needs into dependable digital systems.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3 services-hero-item services-hero-actions">
