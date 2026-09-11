@@ -7,12 +7,12 @@ function About() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto max-w-305 px-5 sm:px-8">
+        <div className="mx-auto w-full max-w-[1000px] px-5 sm:px-8">
           <p className="section-kicker">About Oleq</p>
-          <h1 className="page-title max-w-4xl">
+          <h1 className="mt-3 max-w-[780px] font-[Poppins,sans-serif] text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
             Technology that stays close to the people it serves.
           </h1>
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-muted-foreground">
+          <p className="mt-6 max-w-[900px] text-lg leading-8 text-muted-foreground">
             Oleq is an African technology company for organisations doing work
             that matters. We combine local context with clear product thinking
             and serious engineering.
@@ -95,9 +95,9 @@ function About() {
           <p className="section-kicker">The Oleq approach</p>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
-              ['01','Listen closely','We begin with the work, people and constraints around the problem—not a preselected solution.'],
-              ['02','Make the hard parts clear','We reduce uncertainty with useful prototypes, technical decisions and a practical delivery plan.'],
-              ['03','Build for the long run','We launch, learn and improve alongside the teams who depend on the platform.'],
+              ['01', 'Listen closely', 'We begin with the work, people and constraints around the problem—not a preselected solution.'],
+              ['02', 'Make the hard parts clear', 'We reduce uncertainty with useful prototypes, technical decisions and a practical delivery plan.'],
+              ['03', 'Build for the long run', 'We launch, learn and improve alongside the teams who depend on the platform.'],
             ].map(([number, title, copy]) => (
               <article key={number} className="rounded-2xl border border-border bg-background p-7">
                 <span className="font-mono text-sm text-primary">{number}</span>
