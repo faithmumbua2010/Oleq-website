@@ -58,6 +58,49 @@ const pos = (row: number, col: number) => ({
 
 function NetworkMap() {
   const hqPos = pos(hq.row, hq.col)
+  const [trafficPositions, setTrafficPositions] = useState(
+    hubs.map((hub) => pos(hub.row, hub.col)),
+  )
+
+  useEffect(() => {
+    const start = performance.now()
+    let frame = 0
+
+    const animate = (now: number) => {
+      const elapsed = now - start
+
+      setTrafficPositions(
+        hubs.map((hub, index) => {
+          const point = pos(hub.row, hub.col)
+          const middleX = (point.x + hqPos.x) / 2
+          const middleY = (point.y + hqPos.y) / 2 - 22
+          const duration = 2600 + (index % 4) * 450
+          const delay = index * 220
+          const routeTime = elapsed - delay
+          const progress =
+            routeTime < 0 ? 0 : (routeTime % duration) / duration
+
+          const inverse = 1 - progress
+          return {
+            x:
+              inverse * inverse * point.x +
+              2 * inverse * progress * middleX +
+              progress * progress * hqPos.x,
+            y:
+              inverse * inverse * point.y +
+              2 * inverse * progress * middleY +
+              progress * progress * hqPos.y,
+          }
+        }),
+      )
+
+      frame = requestAnimationFrame(animate)
+    }
+
+    frame = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(frame)
+  }, [hqPos.x, hqPos.y])
+
   return (
     <svg
       viewBox="0 0 520 600"
@@ -94,14 +137,22 @@ function NetworkMap() {
       })}
       {hubs.map((hub, index) => {
         const point = pos(hub.row, hub.col)
+        const traffic = trafficPositions[index]
         return (
-          <circle
-            key={`hub-${index}`}
-            cx={point.x}
-            cy={point.y}
-            r="4.2"
-            className="network-hub fill-primary"
-          />
+          <g key={`hub-${index}`}>
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r="4.2"
+              className="network-hub fill-primary"
+            />
+            <circle
+              cx={traffic.x}
+              cy={traffic.y}
+              r="2.7"
+              className="fill-accent"
+            />
+          </g>
         )
       })}
       <circle
@@ -110,6 +161,25 @@ function NetworkMap() {
         r="6"
         className="network-hq fill-accent"
       />
+      <circle
+        cx={hqPos.x}
+        cy={hqPos.y}
+        r="10"
+        className="fill-none stroke-accent opacity-30"
+      >
+        <animate
+          attributeName="r"
+          values="7;13;7"
+          dur="2.2s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="opacity"
+          values="0.45;0;0.45"
+          dur="2.2s"
+          repeatCount="indefinite"
+        />
+      </circle>
       <text
         x={hqPos.x + 10}
         y={hqPos.y + 3}
