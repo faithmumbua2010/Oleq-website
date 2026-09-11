@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import CtaButton from '../common/cta-button'
 import { Link } from '@tanstack/react-router'
 
@@ -120,6 +121,43 @@ function NetworkMap() {
   )
 }
 
+function AnimatedStat({
+  target,
+  suffix = '',
+  decimals = 0,
+}: {
+  target: number
+  suffix?: string
+  decimals?: number
+}) {
+  const [value, setValue] = useState(0)
+
+  useEffect(() => {
+    const duration = 1600
+    const start = performance.now()
+    let frame = 0
+
+    const animate = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setValue(target * eased)
+
+      if (progress < 1) {
+        frame = requestAnimationFrame(animate)
+      }
+    }
+
+    frame = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(frame)
+  }, [target])
+
+  return (
+    <>
+      {value.toFixed(decimals)}{suffix}
+    </>
+  )
+}
+
 export default function HeroSection() {
   return (
     <section className="hero relative overflow-hidden">
@@ -151,7 +189,7 @@ export default function HeroSection() {
           <div className="hero-stats grid grid-cols-4 gap-9 border-t border-border pt-6.5 max-[680px]:grid-cols-2 max-[680px]:gap-6">
             <div className="hero-stat flex flex-col gap-1.5">
               <b className="font-[Poppins,sans-serif] text-[clamp(18px,1.8vw,26px)] font-semibold text-foreground">
-                500K+
+                <AnimatedStat target={500} suffix="K+" />
               </b>
               <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
                 MEMBERSHIPS
@@ -159,7 +197,7 @@ export default function HeroSection() {
             </div>
             <div className="hero-stat flex flex-col gap-1.5">
               <b className="font-[Poppins,sans-serif] text-[clamp(18px,1.8vw,26px)] font-semibold text-foreground">
-                4.9M+
+                <AnimatedStat target={4.9} suffix="M+" decimals={1} />
               </b>
               <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
                 LEARNERS
@@ -167,7 +205,7 @@ export default function HeroSection() {
             </div>
             <div className="hero-stat flex flex-col gap-1.5">
               <b className="font-[Poppins,sans-serif] text-[clamp(18px,1.8vw,26px)] font-semibold text-foreground">
-                12
+                <AnimatedStat target={12} />
               </b>
               <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
                 COUNTRIES
@@ -175,7 +213,7 @@ export default function HeroSection() {
             </div>
             <div className="hero-stat flex flex-col gap-1.5">
               <b className="font-[Poppins,sans-serif] text-[clamp(18px,1.8vw,26px)] font-semibold text-foreground">
-                12+ YRS
+                <AnimatedStat target={12} suffix="+ YRS" />
               </b>
               <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
                 IN PRODUCTION
