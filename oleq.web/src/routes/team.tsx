@@ -54,18 +54,18 @@ function Team() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto max-w-305 px-5 sm:px-8">
-          <p className="section-kicker">Our people</p>
+        <div className="mx-auto max-w-305 px-5 sm:px-8 mb-17">
+      
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.35fr_.65fr] lg:items-end lg:gap-20">
             <div>
-              <h1 className="page-title max-w-3xl">Meet the team.</h1>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
+              <h1 className="page-title max-w-3xl text-3xl">Meet the team.</h1>
+              <p className="mt-8 max-w-2xl text-2xl leading-8 text-muted-foreground">
                 A multidisciplinary team of builders, problem-solvers and
                 creatives working together to design and deliver dependable
                 digital infrastructure for organisations doing meaningful work.
               </p>
             </div>
-            <p className="border-l border-border pl-7 leading-8 text-muted-foreground">
+            <p className="border-l border-border pl-7 leading-8 text-muted-foreground text-2xl">
               We bring together expertise across technology, product, design,
               operations and local context to build solutions that work in the
               real world.
@@ -78,7 +78,7 @@ function Team() {
         <div className="overflow-hidden rounded-3xl border border-border bg-muted/40">
           <div className="relative flex aspect-[16/7] min-h-64 items-center justify-center bg-muted">
             <img
-              src="/team.jpg"
+              src="/team.webp"
               alt="Oleq team"
               className="h-full w-full object-cover"
               onError={(event) => {
