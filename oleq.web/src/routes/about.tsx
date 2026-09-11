@@ -8,17 +8,15 @@ function About() {
     <div>
       <section className="page-hero">
         <div className="mx-auto max-w-305 px-5 sm:px-8">
-          <div className="max-w-4xl">
-            <p className="section-kicker">About Oleq</p>
-            <h1 className="page-title">
-              Technology that stays close to the people it serves.
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-              Oleq is an African technology company for organisations doing work
-              that matters. We combine local context with clear product thinking
-              and serious engineering.
-            </p>
-          </div>
+          <p className="section-kicker">About Oleq</p>
+          <h1 className="page-title max-w-4xl">
+            Technology that stays close to the people it serves.
+          </h1>
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-muted-foreground">
+            Oleq is an African technology company for organisations doing work
+            that matters. We combine local context with clear product thinking
+            and serious engineering.
+          </p>
         </div>
       </section>
 
@@ -97,30 +95,13 @@ function About() {
           <p className="section-kicker">The Oleq approach</p>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
-              [
-                '01',
-                'Listen closely',
-                'We begin with the work, people and constraints around the problem—not a preselected solution.',
-              ],
-              [
-                '02',
-                'Make the hard parts clear',
-                'We reduce uncertainty with useful prototypes, technical decisions and a practical delivery plan.',
-              ],
-              [
-                '03',
-                'Build for the long run',
-                'We launch, learn and improve alongside the teams who depend on the platform.',
-              ],
+              ['01','Listen closely','We begin with the work, people and constraints around the problem—not a preselected solution.'],
+              ['02','Make the hard parts clear','We reduce uncertainty with useful prototypes, technical decisions and a practical delivery plan.'],
+              ['03','Build for the long run','We launch, learn and improve alongside the teams who depend on the platform.'],
             ].map(([number, title, copy]) => (
-              <article
-                key={number}
-                className="rounded-2xl border border-border bg-background p-7"
-              >
+              <article key={number} className="rounded-2xl border border-border bg-background p-7">
                 <span className="font-mono text-sm text-primary">{number}</span>
-                <h3 className="mt-8 font-[Poppins,sans-serif] text-2xl font-semibold">
-                  {title}
-                </h3>
+                <h3 className="mt-8 font-[Poppins,sans-serif] text-2xl font-semibold">{title}</h3>
                 <p className="mt-4 leading-7 text-muted-foreground">{copy}</p>
               </article>
             ))}
@@ -136,10 +117,7 @@ function About() {
               A multidisciplinary team, not a one-person story.
             </h2>
           </div>
-          <Link
-            to="/team"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground"
-          >
+          <Link to="/team" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground">
             Meet the team <ArrowRight size={18} />
           </Link>
         </div>
