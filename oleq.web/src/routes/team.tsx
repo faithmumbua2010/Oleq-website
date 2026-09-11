@@ -54,27 +54,37 @@ function Team() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto max-w-305 px-5 sm:px-8">
+        <div className="container wrap">
           <p className="section-kicker">Our people</p>
-          <div className="mt-6 grid gap-10 lg:grid-cols-[1.35fr_.65fr] lg:items-end lg:gap-20">
+
+          <div className="mt-8 grid gap-12 lg:grid-cols-[1.35fr_.65fr] lg:gap-20">
             <div>
               <h1 className="page-title max-w-3xl">Meet the team.</h1>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
+              <p className="hero-sub mt-7 max-w-3xl">
                 A multidisciplinary team of builders, problem-solvers and
                 creatives working together to design and deliver dependable
                 digital infrastructure for organisations doing meaningful work.
               </p>
             </div>
-            <p className="border-l border-border pl-7 leading-8 text-muted-foreground">
-              We bring together expertise across technology, product, design,
-              operations and local context to build solutions that work in the
-              real world.
-            </p>
+
+            <div className="flex items-start lg:border-l lg:border-border lg:pl-8">
+              <p className="max-w-md text-lg leading-8 text-muted-foreground">
+                We bring together expertise across technology, product, design,
+                operations and local context to build solutions that work in the
+                real world.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-305 px-5 pb-16 sm:px-8 sm:pb-24">
+      <section className="container wrap pt-16 sm:pt-24">
+        <div className="mb-8 flex items-center justify-center gap-4">
+          <span className="h-px w-10 bg-border" />
+          <p className="section-kicker">The team</p>
+          <span className="h-px w-10 bg-border" />
+        </div>
+
         <div className="overflow-hidden rounded-3xl border border-border bg-muted/40">
           <div className="relative flex aspect-[16/7] min-h-64 items-center justify-center bg-muted">
             <img
@@ -89,18 +99,20 @@ function Team() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-5 pb-20 text-center sm:px-8 sm:pb-28">
-        <p className="section-kicker justify-center">Our team</p>
-        <h2 className="section-title mt-5">Driven by people, grounded in impact.</h2>
-        <p className="mt-7 text-lg leading-8 text-muted-foreground">
-          At Oleq, our team combines technical expertise with a strong
-          understanding of the organisations and communities we serve. We are
-          engineers, designers, product thinkers and operators, united by a
-          shared commitment to solving real problems through technology.
-        </p>
+      <section className="container wrap">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="section-kicker justify-center">Our team</p>
+          <h2 className="section-title mt-5">Driven by people, grounded in impact.</h2>
+          <p className="mt-7 text-lg leading-8 text-muted-foreground">
+            At Oleq, our team combines technical expertise with a strong
+            understanding of the organisations and communities we serve. We are
+            engineers, designers, product thinkers and operators, united by a
+            shared commitment to solving real problems through technology.
+          </p>
+        </div>
       </section>
 
-      <section className="mx-auto max-w-305 px-5 pb-20 sm:px-8 sm:pb-28">
+      <section className="container wrap">
         <div className="rounded-3xl border border-border bg-muted/30 px-6 py-12 sm:px-10 sm:py-16">
           <div className="mb-14 flex items-center justify-between gap-6">
             <p className="section-kicker">Meet our team</p>
@@ -133,7 +145,7 @@ function Team() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-305 px-5 pb-20 sm:px-8 sm:pb-28">
+      <section className="container wrap">
         <div className="relative overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#071525_0%,#0b2a46_60%,#0369a1_140%)] px-7 py-12 text-white sm:px-12 sm:py-16">
           <div className="relative z-10 max-w-2xl">
             <p className="section-kicker text-sky-300">Work with us</p>
