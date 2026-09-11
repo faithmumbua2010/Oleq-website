@@ -85,6 +85,7 @@ function NetworkMap() {
         return (
           <path
             key={`line-${index}`}
+            id={`network-route-${index}`}
             d={`M ${point.x} ${point.y} Q ${middleX} ${middleY} ${hqPos.x} ${hqPos.y}`}
             className="network-route fill-none stroke-accent opacity-55"
             strokeWidth="1.1"
@@ -95,13 +96,24 @@ function NetworkMap() {
       {hubs.map((hub, index) => {
         const point = pos(hub.row, hub.col)
         return (
-          <circle
-            key={`hub-${index}`}
-            cx={point.x}
-            cy={point.y}
-            r="4.2"
-            className="network-hub fill-primary"
-          />
+          <g key={`hub-${index}`}>
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r="4.2"
+              className="network-hub fill-primary"
+            />
+            <circle r="2.7" className="fill-accent">
+              <animateMotion
+                dur={`${2.6 + (index % 4) * 0.45}s`}
+                begin={`${index * 0.22}s`}
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href={`#network-route-${index}`} />
+              </animateMotion>
+            </circle>
+          </g>
         )
       })}
       <circle
@@ -110,6 +122,25 @@ function NetworkMap() {
         r="6"
         className="network-hq fill-accent"
       />
+      <circle
+        cx={hqPos.x}
+        cy={hqPos.y}
+        r="10"
+        className="fill-none stroke-accent opacity-30"
+      >
+        <animate
+          attributeName="r"
+          values="7;13;7"
+          dur="2.2s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="opacity"
+          values="0.45;0;0.45"
+          dur="2.2s"
+          repeatCount="indefinite"
+        />
+      </circle>
       <text
         x={hqPos.x + 10}
         y={hqPos.y + 3}
