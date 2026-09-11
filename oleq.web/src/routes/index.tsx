@@ -11,8 +11,7 @@ import ProjectCard from '#/components/ProjectCard'
 import HeroSection from '#/components/home/hero-section'
 import HowWeWork from '#/components/home/how-we-work'
 import { projects } from '#/data/projects'
-import HeroStripSection from '#/components/home/hero-strip-section'
-import HeroStripSection2 from '#/components/home/hero-strip-section2'
+
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -79,8 +78,7 @@ function Home() {
   return (
     <div id="top">
       <HeroSection />
-      <HeroStripSection />
-      <HeroStripSection2 />
+   
       <HowWeWork />
 
       <section

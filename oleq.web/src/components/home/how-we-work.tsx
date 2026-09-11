@@ -71,11 +71,6 @@ export default function HowWeWork() {
               >
                 <span className="pointer-events-none absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-primary to-accent transition-transform duration-300 group-hover:scale-x-100" />
 
-                <Icon
-                  className="pointer-events-none absolute -right-4 -top-4 h-24 w-24 text-primary opacity-[0.06] transition-transform duration-300 group-hover:scale-110 group-hover:opacity-[0.1]"
-                  strokeWidth={1}
-                />
-
                 <div className="relative flex items-center justify-between">
                   <p className="font-mono text-xs font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     0{index + 1}

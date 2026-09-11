@@ -165,7 +165,7 @@ export default function HeroSection() {
         <div>
           <div className="eyebrow mb-4.5 flex items-center gap-2.5 font-mono text-[12.5px] uppercase tracking-[0.14em] text-primary">
             <span className="h-px w-4.5 shrink-0 bg-primary"></span>
-            Digital infrastructure — built &amp; operated in Africa
+            Digital infrastructure built &amp; operated in Africa
           </div>
           <h1 className="mb-6 font-[Poppins,sans-serif] text-[clamp(38px,4.6vw,62px)] font-semibold leading-[1.08] tracking-[-0.01em]">
             Building intelligent digital infrastructure
@@ -173,7 +173,7 @@ export default function HeroSection() {
           </h1>
           <p className="hero-sub mb-9.5 max-w-120 text-[18px] text-muted-foreground">
             Oleq designs, builds and operates the platforms that run insurance,
-            education, property and payments — combining engineering, AI and
+            education, property and payments  combining engineering, AI and
             data into systems that hold up at national scale.
           </p>
           <div className="hero-ctas mb-14 flex flex-wrap gap-4">
