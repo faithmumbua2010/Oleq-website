@@ -132,8 +132,8 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-50 px-5 py-20 sm:px-8 sm:py-28 dark:bg-slate-900/60">
-        <div className="mx-auto max-w-305 sm:px-8">
+      <section className="bg-slate-50 dark:bg-slate-900/60">
+        <div className="container">
           <div className="flex flex-col gap-6 sm:items-end">
             <div className="mx-auto w-full max-w-2xl text-center">
               <h2 className="section-title">
@@ -145,8 +145,8 @@ function Home() {
               </p>
             </div>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {projects.slice(0, 3).map((project) => (
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {projects.slice(0, 4).map((project) => (
               <ProjectCard key={project.name} project={project} />
             ))}
           </div>

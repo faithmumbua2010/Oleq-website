@@ -7,22 +7,20 @@ function About() {
   return (
     <div>
       <section className="page-hero">
-        <div className="mx-auto max-w-305 px-5 sm:px-8">
-          <div className="max-w-4xl">
-            <p className="section-kicker">About Oleq</p>
-            <h1 className="page-title">
-              Technology that stays close to the people it serves.
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-              Oleq is an African technology company for organisations doing work
-              that matters. We combine local context with clear product thinking
-              and serious engineering.
-            </p>
-          </div>
+        <div className="mx-auto w-full max-w-[1000px] px-5 sm:px-8">
+          <p className="section-kicker">About Oleq</p>
+          <h1 className="mt-3 max-w-[780px] font-[Poppins,sans-serif] text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
+            Technology that stays close to the people it serves.
+          </h1>
+          <p className="mt-6 max-w-[900px] text-lg leading-8 text-muted-foreground">
+            Oleq is an African technology company for organisations doing work
+            that matters. We combine local context with clear product thinking
+            and serious engineering.
+          </p>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-305 gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[.9fr_1.1fr]">
+      <section className="mx-auto grid max-w-305 gap-12 px-5 pb-20 pt-32 sm:px-8 sm:pb-28 sm:pt-40 lg:grid-cols-[.9fr_1.1fr]">
         <div>
           <p className="section-kicker">Our point of view</p>
           <h2 className="section-title">
@@ -97,30 +95,13 @@ function About() {
           <p className="section-kicker">The Oleq approach</p>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {[
-              [
-                '01',
-                'Listen closely',
-                'We begin with the work, people and constraints around the problem—not a preselected solution.',
-              ],
-              [
-                '02',
-                'Make the hard parts clear',
-                'We reduce uncertainty with useful prototypes, technical decisions and a practical delivery plan.',
-              ],
-              [
-                '03',
-                'Build for the long run',
-                'We launch, learn and improve alongside the teams who depend on the platform.',
-              ],
+              ['01', 'Listen closely', 'We begin with the work, people and constraints around the problem—not a preselected solution.'],
+              ['02', 'Make the hard parts clear', 'We reduce uncertainty with useful prototypes, technical decisions and a practical delivery plan.'],
+              ['03', 'Build for the long run', 'We launch, learn and improve alongside the teams who depend on the platform.'],
             ].map(([number, title, copy]) => (
-              <article
-                key={number}
-                className="rounded-2xl border border-border bg-background p-7"
-              >
+              <article key={number} className="rounded-2xl border border-border bg-background p-7">
                 <span className="font-mono text-sm text-primary">{number}</span>
-                <h3 className="mt-8 font-[Poppins,sans-serif] text-2xl font-semibold">
-                  {title}
-                </h3>
+                <h3 className="mt-8 font-[Poppins,sans-serif] text-2xl font-semibold">{title}</h3>
                 <p className="mt-4 leading-7 text-muted-foreground">{copy}</p>
               </article>
             ))}
@@ -136,10 +117,7 @@ function About() {
               A multidisciplinary team, not a one-person story.
             </h2>
           </div>
-          <Link
-            to="/team"
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground"
-          >
+          <Link to="/team" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground">
             Meet the team <ArrowRight size={18} />
           </Link>
         </div>
