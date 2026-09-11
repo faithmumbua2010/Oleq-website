@@ -20,7 +20,7 @@ function About() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-305 gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[.9fr_1.1fr]">
+      <section className="mx-auto grid max-w-305 gap-12 px-5 pb-20 pt-32 sm:px-8 sm:pb-28 sm:pt-40 lg:grid-cols-[.9fr_1.1fr]">
         <div>
           <p className="section-kicker">Our point of view</p>
           <h2 className="section-title">
