@@ -4,26 +4,11 @@ import { ArrowRight } from 'lucide-react'
 export const Route = createFileRoute('/team')({ component: Team })
 
 const team = [
-  {
-    name: 'Ronald Mutuku',
-    role: 'CEO',
-  },
-  {
-    name: 'Oliver Sagala',
-    role: 'Senior Developer',
-  },
-  {
-    name: 'Antony',
-    role: 'App Developer',
-  },
-  {
-    name: 'Bilha',
-    role: 'Frontend Developer',
-  },
-  {
-    name: 'Fred',
-    role: 'Project Manager',
-  },
+  { name: 'Ronald Mutuku', role: 'CEO' },
+  { name: 'Oliver Sagala', role: 'Senior Developer' },
+  { name: 'Antony', role: 'App Developer' },
+  { name: 'Bilha', role: 'Frontend Developer' },
+  { name: 'Fred', role: 'Project Manager' },
 ]
 
 function initials(name: string) {
@@ -60,17 +45,22 @@ function Team() {
       </section>
 
       <section className="mx-auto max-w-305 px-5 pb-16 sm:px-8 sm:pb-24">
-        <div className="overflow-hidden rounded-3xl border border-border bg-muted/40">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-muted/40">
           <div className="flex aspect-[16/7] min-h-64 items-center justify-center bg-muted">
             <img
               src="/team.jpg"
-              alt="Oleq team"
+              alt="The Oleq team"
               className="h-full w-full object-cover"
               onError={(event) => {
                 event.currentTarget.style.display = 'none'
+                event.currentTarget.parentElement?.classList.add('photo-placeholder')
               }}
             />
-            <div className="absolute hidden" />
+            <div className="pointer-events-none absolute inset-0 grid place-items-center">
+              <span className="rounded-full border border-border bg-background/80 px-5 py-2 text-sm font-semibold text-muted-foreground backdrop-blur">
+                Add your team photo as public/team.jpg
+              </span>
+            </div>
           </div>
         </div>
       </section>
