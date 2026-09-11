@@ -106,17 +106,17 @@ function Contact() {
                     required
                     name="name"
                     className="form-input"
-                    placeholder="Jane Doe"
+                    placeholder="name"
                   />
                 </label>
                 <label className="form-label">
-                  Work email
+                  Email
                   <input
                     required
                     type="email"
                     name="email"
                     className="form-input"
-                    placeholder="jane@company.com"
+                    placeholder="your email"
                   />
                 </label>
                 <label className="form-label">
@@ -132,9 +132,10 @@ function Contact() {
                   Project area
                   <select required name="area" className="form-input">
                     <option value="">Select one</option>
-                    <option>Finance</option>
-                    <option>Education</option>
-                    <option>Health</option>
+                    <option>InsurTech</option>
+                    <option>EdTech</option>
+                    <option>PropTech</option>
+                     <option>Payments & Fintech</option>
                     <option>Another area</option>
                   </select>
                 </label>
