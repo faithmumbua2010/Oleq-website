@@ -4,11 +4,41 @@ import { ArrowRight } from 'lucide-react'
 export const Route = createFileRoute('/team')({ component: Team })
 
 const team = [
-  { name: 'Ronald Mutuku', role: 'CEO' },
-  { name: 'Oliver Sagala', role: 'Senior Developer' },
-  { name: 'Antony', role: 'App Developer' },
-  { name: 'Bilha', role: 'Frontend Developer' },
-  { name: 'Fred', role: 'Project Manager' },
+  {
+    name: 'Ronald Mutuku',
+    role: 'CEO',
+    description:
+      'Sets the direction for Oleq and keeps our work focused on meaningful client outcomes.',
+    color: 'bg-sky-100 text-sky-700 dark:bg-sky-950/50 dark:text-sky-300',
+  },
+  {
+    name: 'Oliver Sagala',
+    role: 'Senior Developer',
+    description:
+      'Leads architecture and solves complex engineering challenges across our platforms.',
+    color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300',
+  },
+  {
+    name: 'Antony',
+    role: 'App Developer',
+    description:
+      'Builds and maintains reliable mobile and application experiences from end to end.',
+    color: 'bg-violet-100 text-violet-700 dark:bg-violet-950/50 dark:text-violet-300',
+  },
+  {
+    name: 'Bilha',
+    role: 'Frontend Developer',
+    description:
+      'Creates clean, responsive interfaces that turn product ideas into experiences people can use.',
+    color: 'bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300',
+  },
+  {
+    name: 'Fred',
+    role: 'Project Manager',
+    description:
+      'Keeps projects moving, communication clear and delivery aligned with what matters most.',
+    color: 'bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300',
+  },
 ]
 
 function initials(name: string) {
@@ -45,22 +75,16 @@ function Team() {
       </section>
 
       <section className="mx-auto max-w-305 px-5 pb-16 sm:px-8 sm:pb-24">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-muted/40">
-          <div className="flex aspect-[16/7] min-h-64 items-center justify-center bg-muted">
+        <div className="overflow-hidden rounded-3xl border border-border bg-muted/40">
+          <div className="relative flex aspect-[16/7] min-h-64 items-center justify-center bg-muted">
             <img
               src="/team.jpg"
-              alt="The Oleq team"
+              alt="Oleq team"
               className="h-full w-full object-cover"
               onError={(event) => {
                 event.currentTarget.style.display = 'none'
-                event.currentTarget.parentElement?.classList.add('photo-placeholder')
               }}
             />
-            <div className="pointer-events-none absolute inset-0 grid place-items-center">
-              <span className="rounded-full border border-border bg-background/80 px-5 py-2 text-sm font-semibold text-muted-foreground backdrop-blur">
-                Add your team photo as public/team.jpg
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -86,18 +110,23 @@ function Team() {
           </div>
 
           <div className="grid gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map(({ name, role }) => (
+            {team.map(({ name, role, description, color }) => (
               <article
                 key={name}
-                className="flex flex-col items-center border-border px-4 text-center lg:border-r lg:last:border-r-0"
+                className="flex flex-col items-center border-border px-5 text-center lg:border-r lg:last:border-r-0"
               >
-                <div className="grid size-24 place-items-center rounded-full border border-border bg-primary/10 font-[Poppins,sans-serif] text-2xl font-bold text-primary">
+                <div
+                  className={`grid size-24 place-items-center rounded-full border border-white/60 font-[Poppins,sans-serif] text-2xl font-bold shadow-sm dark:border-white/10 ${color}`}
+                >
                   {initials(name)}
                 </div>
                 <h3 className="mt-5 font-[Poppins,sans-serif] text-base font-bold">
                   {name}
                 </h3>
-                <p className="mt-1 text-sm text-muted-foreground">{role}</p>
+                <p className="mt-1 text-sm font-semibold text-primary">{role}</p>
+                <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
+                  {description}
+                </p>
               </article>
             ))}
           </div>
