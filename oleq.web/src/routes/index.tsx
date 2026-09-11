@@ -185,7 +185,7 @@ function Home() {
                 Bring us your challenge <ArrowRight size={17} />
               </Link>
             </div>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-4">
               {testimonials.map((testimonial) => (
                 <figure
                   key={testimonial.name}
