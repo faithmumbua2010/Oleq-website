@@ -56,16 +56,16 @@ function Team() {
       <section className="page-hero">
         <div className="mx-auto max-w-305 px-5 sm:px-8">
           <p className="section-kicker">Our people</p>
-          <div className="mt-4 grid gap-8 lg:grid-cols-[1.35fr_.65fr] lg:items-end lg:gap-16">
+          <div className="mt-6 grid gap-10 lg:grid-cols-[1.35fr_.65fr] lg:items-end lg:gap-20">
             <div>
               <h1 className="page-title max-w-3xl">Meet the team.</h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
                 A multidisciplinary team of builders, problem-solvers and
                 creatives working together to design and deliver dependable
                 digital infrastructure for organisations doing meaningful work.
               </p>
             </div>
-            <p className="border-l border-border pl-6 leading-7 text-muted-foreground">
+            <p className="border-l border-border pl-7 leading-8 text-muted-foreground">
               We bring together expertise across technology, product, design,
               operations and local context to build solutions that work in the
               real world.
@@ -91,8 +91,8 @@ function Team() {
 
       <section className="mx-auto max-w-3xl px-5 pb-20 text-center sm:px-8 sm:pb-28">
         <p className="section-kicker justify-center">Our team</p>
-        <h2 className="section-title mt-4">Driven by people, grounded in impact.</h2>
-        <p className="mt-5 text-lg leading-8 text-muted-foreground">
+        <h2 className="section-title mt-5">Driven by people, grounded in impact.</h2>
+        <p className="mt-7 text-lg leading-8 text-muted-foreground">
           At Oleq, our team combines technical expertise with a strong
           understanding of the organisations and communities we serve. We are
           engineers, designers, product thinkers and operators, united by a
@@ -102,14 +102,14 @@ function Team() {
 
       <section className="mx-auto max-w-305 px-5 pb-20 sm:px-8 sm:pb-28">
         <div className="rounded-3xl border border-border bg-muted/30 px-6 py-12 sm:px-10 sm:py-16">
-          <div className="mb-12 flex items-center justify-between gap-6">
+          <div className="mb-14 flex items-center justify-between gap-6">
             <p className="section-kicker">Meet our team</p>
             <p className="hidden text-sm font-semibold text-primary sm:block">
               A diverse team, a bigger impact.
             </p>
           </div>
 
-          <div className="grid gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {team.map(({ name, role, description, color }) => (
               <article
                 key={name}
@@ -120,11 +120,11 @@ function Team() {
                 >
                   {initials(name)}
                 </div>
-                <h3 className="mt-5 font-[Poppins,sans-serif] text-base font-bold">
+                <h3 className="mt-6 font-[Poppins,sans-serif] text-base font-bold">
                   {name}
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-primary">{role}</p>
-                <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
+                <p className="mt-2 text-sm font-semibold text-primary">{role}</p>
+                <p className="mt-4 max-w-xs text-sm leading-7 text-muted-foreground">
                   {description}
                 </p>
               </article>
@@ -137,17 +137,17 @@ function Team() {
         <div className="relative overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#071525_0%,#0b2a46_60%,#0369a1_140%)] px-7 py-12 text-white sm:px-12 sm:py-16">
           <div className="relative z-10 max-w-2xl">
             <p className="section-kicker text-sky-300">Work with us</p>
-            <h2 className="mt-4 font-[Poppins,sans-serif] text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-5 font-[Poppins,sans-serif] text-3xl font-semibold tracking-tight sm:text-4xl">
               Let&apos;s build what&apos;s next, together.
             </h2>
-            <p className="mt-5 max-w-xl leading-7 text-slate-300">
+            <p className="mt-6 max-w-xl leading-8 text-slate-300">
               We&apos;re always open to working with passionate people, partners
               and organisations who care about creating meaningful impact
               through technology.
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground"
+              className="mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-primary-foreground no-underline hover:bg-accent hover:text-accent-foreground"
             >
               Get in touch <ArrowRight size={18} />
             </Link>
