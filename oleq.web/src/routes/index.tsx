@@ -72,6 +72,13 @@ const testimonials = [
     role: 'Product Sponsor',
     initials: 'NW',
   },
+  {
+    quote:
+      'Oleq made the complexity feel manageable, with a thoughtful process and technology our teams could actually rely on.',
+    name: 'Grace O.',
+    role: 'Digital Transformation Lead',
+    initials: 'GO',
+  },
 ]
 
 function Home() {
@@ -159,48 +166,50 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-background px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto grid max-w-305 gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
-          <div className="text-center">
-            <p className="section-kicker">Client perspective</p>
-            <h2 className="section-title">
-              Built to earn the trust of the teams who use it.
-            </h2>
-            <p className="mx-auto mt-5 max-w-md leading-7 text-muted-foreground">
-              The best technology makes complex work feel more certain,
-              connected and human.
-            </p>
-            <Link
-              to="/contact"
-              className="mt-8 inline-flex items-center gap-2 font-bold text-primary no-underline hover:text-accent"
-            >
-              Bring us your challenge <ArrowRight size={17} />
-            </Link>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <figure
-                key={testimonial.name}
-                className="flex min-h-72 flex-col rounded-2xl border border-border bg-card p-6"
+      <section className="bg-background">
+        <div className="container">
+          <div className="mx-auto grid max-w-305 gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-16">
+            <div className="text-center">
+              <p className="section-kicker">Client perspective</p>
+              <h2 className="section-title">
+                Built to earn the trust of the teams who use it.
+              </h2>
+              <p className="mx-auto mt-5 max-w-md leading-7 text-muted-foreground">
+                The best technology makes complex work feel more certain,
+                connected and human.
+              </p>
+              <Link
+                to="/contact"
+                className="mt-8 inline-flex items-center gap-2 font-bold text-primary no-underline hover:text-accent"
               >
-                <blockquote className="text-[15px] leading-7 text-foreground">
-                  “{testimonial.quote}”
-                </blockquote>
-                <figcaption className="mt-auto border-t border-border pt-5 text-sm">
-                  <div className="flex items-center gap-3">
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-slate-900 text-xs font-bold text-white dark:bg-slate-700">
-                      {testimonial.initials}
-                    </span>
-                    <div>
-                      <p className="font-bold">{testimonial.name}</p>
-                      <p className="mt-1 leading-5 text-muted-foreground">
-                        {testimonial.role}
-                      </p>
+                Bring us your challenge <ArrowRight size={17} />
+              </Link>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {testimonials.map((testimonial) => (
+                <figure
+                  key={testimonial.name}
+                  className="flex min-h-72 flex-col rounded-2xl border border-border bg-card p-6"
+                >
+                  <blockquote className="text-[15px] leading-7 text-foreground">
+                    “{testimonial.quote}”
+                  </blockquote>
+                  <figcaption className="mt-auto border-t border-border pt-5 text-sm">
+                    <div className="flex items-center gap-3">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-slate-900 text-xs font-bold text-white dark:bg-slate-700">
+                        {testimonial.initials}
+                      </span>
+                      <div>
+                        <p className="font-bold">{testimonial.name}</p>
+                        <p className="mt-1 leading-5 text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
